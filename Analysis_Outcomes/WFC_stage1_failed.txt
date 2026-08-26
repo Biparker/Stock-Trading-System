@@ -1,0 +1,25 @@
+WFC - STAGE 1 FAILED
+Date: 2026-06-15
+Reason: 30-day forecast shows -5.57% decline (below minimum threshold of +5%)
+Current Price: $83.73
+30-Day Forecast: $79.51
+Forecast Change: -5.57%
+Technical Score: N/A (negative forecast)
+Decision: Do not proceed to backtesting
+
+FORECAST DETAILS:
+- Method: XGBoost
+- RMSE: 0.23
+- MAE: 0.18
+- MAPE: 0.22%
+- Forecast Period: 36 days
+- Trend: Downtrend (weak)
+- Volatility: Low (1.69%)
+
+ANALYSIS:
+The XGBoost model predicts a decline from $83.73 to $79.51 over the next 30 days,
+representing a -5.57% decrease. This fails to meet the minimum upside threshold
+required for Stage 1 approval. The stock shows weak uptrend characteristics but
+the forecast indicates near-term downside pressure.
+
+RECOMMENDATION: Move to next stock in screening process.

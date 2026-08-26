@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              GOOGL (Alphabet Inc.)
+Analysis Period:    2025-06-09 to 2026-06-05
+Forecast Period:    2026-06-06 to 2026-07-27
+Historical Records: 250
+Forecasted Days:    36
+Current Price:      $368.53
+
+[DATA SUMMARY]
+Start Price:        $175.69
+End Price:          $368.53
+Min Price:          $164.82
+Max Price:          $402.62
+Average Price:      $280.04
+Price Change:       +109.76%
+Volatility:         1.85%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.771762
+
+Trend:
+  Direction:        Uptrend
+  Strength:         Strong
+  R-squared:        0.8750
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 250 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 1.85%
+  Coeff of Var:     0.0001
+
+[SELECTED FORECASTING METHOD]
+Method:             Xgboost
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-06-08   $366.02         $363.63         $368.41         $4.78     
+2026-06-09   $365.98         $363.59         $368.37         $4.78     
+2026-06-10   $366.84         $364.45         $369.23         $4.78     
+2026-06-11   $366.89         $364.50         $369.28         $4.78     
+2026-06-12   $366.55         $364.16         $368.94         $4.78     
+2026-06-15   $366.89         $364.50         $369.28         $4.78     
+2026-06-16   $366.89         $364.50         $369.28         $4.78     
+2026-06-17   $366.84         $364.45         $369.23         $4.78     
+2026-06-18   $366.84         $364.45         $369.23         $4.78     
+2026-06-19   $366.84         $364.45         $369.23         $4.78     
+2026-06-22   $366.89         $364.50         $369.28         $4.78     
+2026-06-23   $366.89         $364.50         $369.28         $4.78     
+2026-06-24   $367.75         $365.36         $370.14         $4.78     
+2026-06-25   $366.89         $364.50         $369.28         $4.78     
+2026-06-26   $366.89         $364.50         $369.28         $4.78     
+2026-06-29   $366.89         $364.50         $369.28         $4.78     
+2026-06-30   $367.75         $365.36         $370.14         $4.78     
+2026-07-01   $367.75         $365.36         $370.14         $4.78     
+2026-07-02   $367.75         $365.36         $370.14         $4.78     
+2026-07-03   $367.75         $365.36         $370.14         $4.78     
+2026-07-06   $367.75         $365.36         $370.14         $4.78     
+2026-07-07   $367.75         $365.36         $370.14         $4.78     
+2026-07-08   $367.75         $365.36         $370.14         $4.78     
+2026-07-09   $367.75         $365.36         $370.14         $4.78     
+2026-07-10   $367.75         $365.36         $370.14         $4.78     
+2026-07-13   $367.75         $365.36         $370.14         $4.78     
+2026-07-14   $367.75         $365.36         $370.14         $4.78     
+2026-07-15   $367.75         $365.36         $370.14         $4.78     
+2026-07-16   $367.75         $365.36         $370.14         $4.78     
+2026-07-17   $367.75         $365.36         $370.14         $4.78     
+2026-07-20   $367.75         $365.36         $370.14         $4.78     
+2026-07-21   $367.75         $365.36         $370.14         $4.78     
+2026-07-22   $367.75         $365.36         $370.14         $4.78     
+2026-07-23   $367.75         $365.36         $370.14         $4.78     
+2026-07-24   $367.75         $365.36         $370.14         $4.78     
+2026-07-27   $367.75         $365.36         $370.14         $4.78     
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $367.33
+Min Forecast:       $365.98
+Max Forecast:       $367.75
+Forecast Change:    -0.21%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               1.2197068114796594
+MAE:                0.8812107432972301
+MAPE:               0.30747502260408743
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $4.78
+  Min:              $4.78
+  Max:              $4.78
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================

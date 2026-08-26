@@ -1,0 +1,43 @@
+NOW - STAGE 1 PASSED ✅
+Date: 2026-07-01
+Tool: time_series_B (XGBoost 30-day relative return forecaster)
+Decision: Proceed to Stage 2 (Monte Carlo backtesting) -- WITH CAUTION FLAG
+
+STOCK INFO:
+  Company         : ServiceNow, Inc.
+  Sector          : Technology / Enterprise Software (AI workflows)
+  Current Price   : ~$99/share  (post-10-for-1 split, 2024)
+  Budget Fit      : ✅ ~6 shares purchasable within $650 budget
+
+STAGE 1 RESULTS:
+  30-Day Forecast Return : +5.60%  (threshold: +5.0%) ✅
+  Confidence Band        : [-21.37%, +32.58%]
+  Forecast Price (mid)   : $100.55
+  Forecast Price Range   : $76.77 - $131.68
+
+MODEL PERFORMANCE:
+  Train RMSE     : 10.2543  |  Train Dir Acc : 64.3%
+  Val   RMSE     : 18.9225  |  Val   Dir Acc : 26.8%  (out-of-sample)
+
+⚠️  CAUTION: Val Direction Accuracy of 26.8% is BELOW RANDOM (50%).
+  The model's directional reliability on out-of-sample year-3 data is poor.
+  The +5.60% forecast barely clears the threshold (margin: +0.60%).
+  The wide confidence band (-21% to +33%) reflects high forecast uncertainty.
+
+TOP FEATURES BY IMPORTANCE:
+  rsi_14       19.8%
+  ret_30d      17.3%
+  macd_signal  16.2%
+  atr_pct      16.1%
+  macd_hist    12.5%
+
+CONTEXT -- WHY THE MODEL STRUGGLES WITH NOW:
+  NOW's price dropped sharply from ~$207 (1yr ago) to ~$99 today -- a -52% decline.
+  The year-3 validation period captured this regime change, which the year-1/2 training
+  data did not see. The positive forecast (+5.60%) is likely capturing the RSI oversold
+  signal and recent +8.8% 2-day bounce (ret_2d = 8.81% in feature snapshot).
+
+DECISION: PASS -- proceed to Stage 2 with caution flag.
+NEXT STEP: Run Monte Carlo backtest to determine optimal trailing stop %
+  Script: stock_specific_backtest.py --ticker NOW
+  Required: Sharpe > 0.3, P(Loss > 5%) < 5%

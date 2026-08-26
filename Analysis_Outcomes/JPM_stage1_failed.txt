@@ -1,0 +1,11 @@
+JPM - STAGE 1 FAILED
+Date: 2026-06-12
+Reason: 30-day forecast shows DECLINE of -2.33% (requires minimum +5% increase)
+Current Price: $320.67
+30-Day Forecast: $313.21
+Forecast Change: -$7.46 (-2.33%)
+36-Day Forecast: $311.66 (-2.81% decline)
+Technical Score: 22.1 (Insufficient - negative forecast)
+Decision: Do not proceed to backtesting
+Model Metrics: RMSE 0.74, MAE 0.54, MAPE 0.18%
+Note: Despite strong historical performance (+21.87% over past year), forward forecast shows decline

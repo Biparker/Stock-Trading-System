@@ -1,0 +1,61 @@
+MU - STAGE 1 PASSED (2nd Run - 2026-07-12)
+Date: 2026-07-12
+Method: Time Series B (XGBoost 30-day relative return)
+Decision: Proceed to Stage 2 -- Stage 2 already complete, proceed to purchase
+
+RUN HISTORY:
+  Run 1 (2026-06-26): PASSED -- Forecast +6.24%, Price $724.66, Val Dir Acc 74.7%
+  Run 2 (2026-07-12): PASSED -- Forecast +5.30%, Price $928.27, Val Dir Acc 83.2%  <-- TODAY
+
+STAGE 1 RESULTS (2026-07-12):
+- Current Price      : $928.27  (was $724.66 on Jun 26 -- UP +28.1% in 16 days)
+- 30-Day Forecast    : +5.30%   (threshold: +5.0%) ✅ PASS -- narrow margin (+0.30%)
+- Forecast Price     : $978.75
+- Confidence Band    : [-40.65%, +51.24%]
+- Val Direction Acc  : 83.2%  (out-of-sample) -- BEST in pipeline, UP from 74.7%
+- Val RMSE           : 36.3318
+- Train Dir Acc      : 67.8%
+- Status             : PASSED
+
+TOP FEATURES DRIVING FORECAST:
+- bb_width    14.9%  (Bollinger Band width -- volatility is VERY elevated)
+- macd_line   14.4%  (momentum signal -- positive but stretched)
+- atr_pct     12.8%  (average true range -- high daily volatility confirmed)
+- ret_30d     10.4%  (30-day return: +69.0% -- exceptional recent momentum)
+- macd_signal 10.7%  (confirming upward momentum)
+- ret_3d       9.2%  (3-day return: +19.7% -- very strong recent surge)
+- ret_10d      9.3%  (10-day return: +19.2% -- confirming surge)
+
+FEATURE SNAPSHOT -- CAUTION FLAGS:
+- bb_pos      : 0.985  (price at 98.5% of Bollinger Band -- EXTREMELY overbought)
+- RSI_14      : 0.765  (76.5% -- overbought territory, above 70 threshold)
+- ret_2d      : +21.2% (stock surged +21% in just 2 days)
+- ret_5d      : +28.4% (stock up +28% in 5 days)
+- vol_ratio   : 1.339  (volume 34% above 20-day average -- elevated activity)
+
+CRITICAL PRICE NOTE:
+MU has moved from $724.66 (Jun 26) to $928.27 TODAY -- a +$203.61 (+28.1%) surge
+in just 16 calendar days. This dramatically changes the purchase economics:
+
+  Prior recommended purchase: 1 share @ ~$725 = ~$725 cost
+  Current purchase cost:      1 share @ ~$928 = ~$928 cost
+  Additional capital required: ~$203 more than originally budgeted
+
+INTERPRETATION:
+The model PASSES (+5.30%) but barely clears the threshold (+0.30% margin).
+The exceptionally high Val Direction Accuracy (83.2%) is a strong positive signal.
+However, the overbought indicators (bb_pos=0.985, RSI=76.5%) and the massive
+2-5 day surge suggest MU may be in a short-term blow-off top after an earnings
+or catalyst event. The wide confidence band (-40.65% to +51.24%) reflects the
+high uncertainty that comes with extreme volatility (3.72% daily).
+
+RECOMMENDATION FOR TUESDAY PURCHASE:
+- Stage 1 PASSES: proceed with MU purchase
+- HOWEVER: confirm current price before ordering -- at $928, the 4% trailing
+  stop means $37.13 max loss per share (vs. $29 at original $725 estimate)
+- The 4.0% trailing stop is STILL the correct stop -- do NOT tighten it
+- Consider whether the $928 price fits within remaining cash budget after JNJ
+
+STAGE 2 STATUS: Already complete -- Sharpe 0.685, 4.0% stop (still valid)
+STAGE 3 STATUS: Already complete -- Score 65.89/100, BUY, Target $1,132
+ALL 3 STAGES: PASSED -- approved for purchase Tuesday

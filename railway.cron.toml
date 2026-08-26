@@ -1,0 +1,12 @@
+# Railway cron job — runs the MeLLeA daily pipeline Mon-Fri at 7 AM EST (11:00 UTC)
+# Deploy this as a SEPARATE Railway service in the same project.
+# Docs: https://docs.railway.app/reference/cron-jobs
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+# Cron schedule: 11:00 UTC = 7:00 AM EST (UTC-4 in summer, UTC-5 in winter)
+# Adjust to "0 12 * * 1-5" for EST winter (UTC-5)
+cronSchedule = "0 11 * * 1-5"
+startCommand = "python daily_pipeline.py --output data/pipeline_output.json"

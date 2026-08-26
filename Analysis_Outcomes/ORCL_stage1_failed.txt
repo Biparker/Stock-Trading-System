@@ -1,0 +1,31 @@
+ORCL - STAGE 1 FAILED
+Date: 2026-07-01
+Tool: time_series_B (XGBoost 30-day relative return forecaster)
+Reason: Forecast return +2.74% is below the +5.0% minimum threshold
+        Val Direction Accuracy 33.7% (below random chance -- model unreliable for ORCL)
+
+Current Price: $192.95
+30-Day Forecast Return: +2.74%  (threshold: +5.0%)
+Confidence Band: [-38.95%, +44.43%]  (extremely wide -- high uncertainty)
+Forecast Price (mid): $198.32
+Forecast Price Range: $130.71 - $300.90
+
+MODEL PERFORMANCE:
+  Train RMSE     : 12.4324  |  Train Dir Acc : 65.3%
+  Val   RMSE     : 23.5778  |  Val   Dir Acc : 33.7%  (out-of-sample -- UNRELIABLE)
+
+TOP FEATURES BY IMPORTANCE:
+  ret_30d    15.5%
+  atr_pct    14.8%
+  macd_line  13.1%
+  ret_20d    10.2%
+
+ANALYSIS:
+  Val Direction Accuracy of 33.7% is WORSE than random (50%) -- the model cannot
+  reliably predict ORCL's direction over a 30-day horizon with 3 years of data.
+  The extremely wide confidence band ($130.71 - $300.90) confirms high uncertainty.
+  ORCL's price behavior over year 3 differs significantly from years 1-2 (likely
+  driven by AI cloud narrative repricing), making the training data unrepresentative.
+
+DECISION: Do not proceed to Stage 2 (backtesting).
+NEXT STEP: Try runner-up candidates -- PANW, CRM, IBM.

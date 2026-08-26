@@ -1,0 +1,10 @@
+META - STAGE 1 FAILED
+Date: 2026-06-17
+Reason: 30-day forecast shows -9.01% decline (below minimum threshold of positive gain)
+Current Price: $580.07
+30-Day Forecast: $527.82
+Technical Score: N/A (failed initial screening)
+Model: Linear Regression (RMSE: 13.78, MAE: 9.92)
+Decision: Do not proceed to backtesting
+
+Analysis: META is in a strong downtrend (-16.53% over past year, R²=0.588). The model predicts continued weakness over the next 30 days. Not suitable for long position at this time.

@@ -1,0 +1,22 @@
+INTC - STAGE 1 FAILED
+Date: 2026-06-12
+Reason: 30-day forecast shows DECLINE of -9.10% (requires minimum +5% increase)
+Current Price: $126.08
+30-Day Forecast: $114.61
+Forecast Change: -$11.47 (-9.10%)
+36-Day Forecast: $114.61 (-9.10% decline)
+Technical Score: 18.2 (Insufficient - negative forecast)
+Decision: Do not proceed to backtesting
+
+Model Metrics:
+- RMSE: 0.58
+- MAE: 0.40
+- MAPE: 0.89%
+
+Additional Context:
+- Extraordinary run-up over past year (+507.03%)
+- Currently at $126.08 (near 52-week high of $129.44)
+- Model predicts significant pullback after massive rally
+- Strong uptrend historically (R²=0.698) but forecast shows reversal
+- High volatility (4.66%)
+- Classic case of profit-taking after extreme gains

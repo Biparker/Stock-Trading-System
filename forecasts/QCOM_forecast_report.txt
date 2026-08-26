@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              QCOM (QUALCOMM Incorporated)
+Analysis Period:    2025-06-09 to 2026-06-05
+Forecast Period:    2026-06-06 to 2026-07-27
+Historical Records: 250
+Forecasted Days:    36
+Current Price:      $215.94
+
+[DATA SUMMARY]
+Start Price:        $152.20
+End Price:          $215.94
+Min Price:          $123.61
+Max Price:          $250.10
+Average Price:      $160.71
+Price Change:       +41.88%
+Volatility:         2.99%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.225270
+
+Trend:
+  Direction:        Uptrend
+  Strength:         Weak
+  R-squared:        0.0446
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 250 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 2.98%
+  Coeff of Var:     0.0002
+
+[SELECTED FORECASTING METHOD]
+Method:             Xgboost
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-06-08   $219.91         $217.92         $221.90         $3.99     
+2026-06-09   $220.15         $218.16         $222.15         $3.99     
+2026-06-10   $220.03         $218.04         $222.02         $3.99     
+2026-06-11   $219.90         $217.91         $221.90         $3.99     
+2026-06-12   $219.90         $217.91         $221.90         $3.99     
+2026-06-15   $219.90         $217.91         $221.90         $3.99     
+2026-06-16   $219.90         $217.91         $221.90         $3.99     
+2026-06-17   $219.90         $217.91         $221.90         $3.99     
+2026-06-18   $220.62         $218.62         $222.61         $3.99     
+2026-06-19   $219.90         $217.91         $221.90         $3.99     
+2026-06-22   $219.90         $217.91         $221.90         $3.99     
+2026-06-23   $219.90         $217.91         $221.90         $3.99     
+2026-06-24   $219.90         $217.91         $221.90         $3.99     
+2026-06-25   $219.90         $217.91         $221.90         $3.99     
+2026-06-26   $219.90         $217.91         $221.90         $3.99     
+2026-06-29   $219.90         $217.91         $221.90         $3.99     
+2026-06-30   $219.90         $217.91         $221.90         $3.99     
+2026-07-01   $219.90         $217.91         $221.90         $3.99     
+2026-07-02   $219.90         $217.91         $221.90         $3.99     
+2026-07-03   $219.90         $217.91         $221.90         $3.99     
+2026-07-06   $219.90         $217.91         $221.90         $3.99     
+2026-07-07   $219.90         $217.91         $221.90         $3.99     
+2026-07-08   $219.90         $217.91         $221.90         $3.99     
+2026-07-09   $219.90         $217.91         $221.90         $3.99     
+2026-07-10   $219.90         $217.91         $221.90         $3.99     
+2026-07-13   $219.90         $217.91         $221.90         $3.99     
+2026-07-14   $219.90         $217.91         $221.90         $3.99     
+2026-07-15   $219.90         $217.91         $221.90         $3.99     
+2026-07-16   $219.90         $217.91         $221.90         $3.99     
+2026-07-17   $219.90         $217.91         $221.90         $3.99     
+2026-07-20   $219.90         $217.91         $221.90         $3.99     
+2026-07-21   $219.90         $217.91         $221.90         $3.99     
+2026-07-22   $219.90         $217.91         $221.90         $3.99     
+2026-07-23   $219.90         $217.91         $221.90         $3.99     
+2026-07-24   $219.90         $217.91         $221.90         $3.99     
+2026-07-27   $219.90         $217.91         $221.90         $3.99     
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $219.93
+Min Forecast:       $219.90
+Max Forecast:       $220.62
+Forecast Change:    +1.84%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               1.0175308887170607
+MAE:                0.7500399849631569
+MAPE:               0.468007241432809
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $3.99
+  Min:              $3.99
+  Max:              $3.99
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================

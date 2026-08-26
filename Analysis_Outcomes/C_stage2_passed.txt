@@ -1,0 +1,36 @@
+C - STAGE 2 PASSED
+Date: 2026-06-30
+Decision: Proceed to Stage 3 (Sentiment Analysis)
+
+METHODOLOGY:
+- Data: 3 years of C daily price history (770 trading days)
+- Price range over 3 years: $35.06 - $145.67
+- Mean daily return: +0.172%
+- Daily volatility: 1.785%
+- Simulations: 10,000 Monte Carlo runs per stop level
+- Stop levels tested: 2.0%, 2.5%, 3.0%, 3.5%, 4.0%, 4.5%, 5.0%
+
+COMPARISON TABLE:
+Stop %     Sharpe     Mean Ret     P(Loss>5%)     Stops/Yr   P(Profit)
+2.0%       0.709          +3.90%         0.00%      41.2      71.0%
+2.5%       0.714          +4.60%         0.00%      32.1      73.3%
+3.0%       0.712          +5.30%         0.00%      25.5      74.5%
+3.5%       0.706          +6.16%         0.00%      20.7      76.1%
+4.0%       0.715          +6.96%         0.00%      17.0      77.4%
+4.5%       0.710          +8.13%         0.00%      14.1      78.5%
+5.0%       0.731          +9.37%         0.00%      11.9      80.1%  <-- RECOMMENDED
+
+RECOMMENDED TRAILING STOP: 5.0%
+
+PERFORMANCE AT RECOMMENDED STOP:
+- Sharpe Ratio       : 0.731  [PASS: > 0.3 required]
+- Mean Annual Return : +9.37%
+- P(Loss > 5%)       : 0.00%  [PASS: < 5.0% required]
+- Expected Stops/Yr  : 11.9
+- P(Profit)          : 80.1%
+
+STAGE 2 DECISION: PASS
+NEXT STEP: Stage 3 -- Sentiment Analysis
+  Required: Download Morningstar analyst report for C from Merrill Lynch
+  Save to: stock-trading-system/sentiment_analyzer/Analyst_reports/Analyst_C.pdf
+  Run: python main.py --ticker C --pdf-path "Analyst_reports/Analyst_C.pdf"

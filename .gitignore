@@ -1,0 +1,39 @@
+﻿# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+time_series_analyzer/venv/
+
+# ── Secrets / credentials — NEVER commit ─────────────────────────────────────
+.env
+*.enc
+.key
+credentials.enc
+
+# ── Large FinBERT model cache (hundreds of MB) ────────────────────────────────
+sentiment_analyzer/models/finbert_cache/
+
+# ── Pipeline log (generated at runtime) ──────────────────────────────────────
+data/pipeline.log
+
+# ── Test / cache ──────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+
+# ── OS / IDE ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.bob/
+
+# ── Plots (large PNGs regenerated on each run) ───────────────────────────────
+time_series_analyzer/output/plots/
+*.png

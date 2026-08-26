@@ -1,0 +1,39 @@
+AAPL - STAGE 1 FAILED (2nd Refresh - 2026-07-12)
+Date: 2026-07-12
+Decision: DO NOT PROCEED - Stage 1 threshold not met
+
+RUN HISTORY:
+  Run 1 (2026-06-14): PASSED  -- Forecast +12.90%, Price $270.17
+  Run 2 (2026-06-30): FAILED  -- Forecast  +1.17%, Price $300.23
+  Run 3 (2026-07-12): FAILED  -- Forecast  +2.87%, Price $310.85  <-- TODAY
+
+STAGE 1 RESULTS (time_series_B, 2026-07-12):
+- Current Price      : $310.85
+- 30-Day Forecast    : +2.87%  (threshold: +5.0%)  ← still below gate
+- Forecast Price     : $319.88
+- Confidence Band    : [-10.87%, +16.60%]
+- Val Direction Acc  : 71.6% (out-of-sample) -- model is reliable
+- Val RMSE           : 7.1807
+- Train Dir Acc      : 66.0%
+- Status             : FAILED
+
+TOP FEATURES DRIVING FORECAST:
+- bb_width   16.6%  (Bollinger Band width -- measuring volatility compression)
+- ret_30d    11.7%  (30-day momentum -- stock has already run up significantly)
+- macd_line   9.7%  (momentum indicator near peak)
+- bb_pos      9.5%  (price near top of Bollinger Band -- overbought signal)
+- rsi_14      8.2%  (RSI elevated -- confirms overbought)
+
+INTERPRETATION:
+AAPL has risen from $270 (Jun 14) to $310.85 today -- a +15.1% move in ~4 weeks.
+The model is correctly identifying that most of the near-term upside has been captured.
+Key signals (bb_pos near top of band, elevated RSI, strong ret_30d) all point to
+consolidation, not continued momentum. The +2.87% forecast is not noise -- it is the
+model detecting a likely pause after a strong run.
+
+This is the second consecutive FAIL. The signal is consistent and should be respected.
+
+DECISION: DO NOT BUY AAPL this cycle.
+NEXT STEP: Re-run Stage 1 in 3-4 weeks (around early August 2026).
+           Stage 2 backtest metrics remain valid -- no need to re-run if/when Stage 1 passes.
+           Stage 3 sentiment (Analyst_aapl.pdf) can be re-run with a fresh PDF at that time.

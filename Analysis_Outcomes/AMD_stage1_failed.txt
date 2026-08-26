@@ -1,0 +1,21 @@
+AMD - STAGE 1 FAILED
+Date: 2026-06-12
+Reason: 30-day forecast shows DECLINE of -10.26% (requires minimum +5% increase)
+Current Price: $521.23
+30-Day Forecast: $467.75
+Forecast Change: -$53.48 (-10.26%)
+36-Day Forecast: $467.75 (-10.26% decline)
+Technical Score: 18.5 (Insufficient - negative forecast)
+Decision: Do not proceed to backtesting
+
+Model Metrics:
+- RMSE: 2.45
+- MAE: 1.62
+- MAPE: 0.69%
+
+Additional Context:
+- Massive run-up over past year (+339.86%)
+- Currently at $521.23 (near 52-week high of $542.52)
+- Model predicts significant pullback/correction
+- High volatility (4.22%)
+- Strong uptrend historically but forecast shows reversal

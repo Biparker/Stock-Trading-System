@@ -1,0 +1,22 @@
+AMGN - STAGE 1 PASSED
+Date: 2026-08-04
+Decision: Proceed to Stage 2 (Backtesting)
+
+FORECAST RESULTS:
+- Company          : Amgen Inc.
+- Current Price    : $385.92
+- 36-Day Forecast  : $453.33  (+17.47%)
+- Mean Forecast    : $416.42
+- Trend R-squared  : 0.677  (Strong uptrend)
+- Daily Volatility : 1.72%  (Low)
+- RMSE             : 5.24  |  MAPE: 1.17%
+- Method           : Linear Regression (auto-selected)
+- 1-Year Change    : +31.66% ($293 to $386)
+
+ACCEPTANCE CRITERIA:
+- 36-day forecast +17.47%  [PASS: > +5.0% required]
+- Strong uptrend confirmed (R-squared 0.677)
+- Low daily volatility (1.72%)
+
+STAGE 1 DECISION: PASS
+NEXT STEP: Stage 2 -- ATR Backtest

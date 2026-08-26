@@ -1,0 +1,76 @@
+{
+  "ticker": "C",
+  "company": "Citigroup Inc.",
+  "date": "2026-06-30T21:57:53.973520",
+  "methodology": "3yr data, 7 trailing stop levels (2.0-5.0%), 10000 Monte Carlo sims",
+  "capital_used": 1000,
+  "daily_mu_pct": 0.1725,
+  "daily_sigma_pct": 1.7847,
+  "recommended_stop": "5.0%",
+  "stage2_pass": true,
+  "results": {
+    "2.0%": {
+      "stop_pct": 2.0,
+      "sharpe": 0.7087,
+      "mean_ret_pct": 3.9,
+      "median_ret_pct": 2.15,
+      "p_loss_gt5": 0.0,
+      "p_profit": 70.99,
+      "avg_stops_yr": 41.2
+    },
+    "2.5%": {
+      "stop_pct": 2.5,
+      "sharpe": 0.7137,
+      "mean_ret_pct": 4.6,
+      "median_ret_pct": 2.51,
+      "p_loss_gt5": 0.0,
+      "p_profit": 73.34,
+      "avg_stops_yr": 32.1
+    },
+    "3.0%": {
+      "stop_pct": 3.0,
+      "sharpe": 0.7119,
+      "mean_ret_pct": 5.3,
+      "median_ret_pct": 2.95,
+      "p_loss_gt5": 0.0,
+      "p_profit": 74.47,
+      "avg_stops_yr": 25.5
+    },
+    "3.5%": {
+      "stop_pct": 3.5000000000000004,
+      "sharpe": 0.7063,
+      "mean_ret_pct": 6.16,
+      "median_ret_pct": 3.37,
+      "p_loss_gt5": 0.0,
+      "p_profit": 76.07,
+      "avg_stops_yr": 20.7
+    },
+    "4.0%": {
+      "stop_pct": 4.0,
+      "sharpe": 0.7152,
+      "mean_ret_pct": 6.96,
+      "median_ret_pct": 4.03,
+      "p_loss_gt5": 0.0,
+      "p_profit": 77.43,
+      "avg_stops_yr": 17.0
+    },
+    "4.5%": {
+      "stop_pct": 4.5,
+      "sharpe": 0.7096,
+      "mean_ret_pct": 8.13,
+      "median_ret_pct": 4.6,
+      "p_loss_gt5": 0.0,
+      "p_profit": 78.49,
+      "avg_stops_yr": 14.1
+    },
+    "5.0%": {
+      "stop_pct": 5.0,
+      "sharpe": 0.7307,
+      "mean_ret_pct": 9.37,
+      "median_ret_pct": 5.36,
+      "p_loss_gt5": 0.0,
+      "p_profit": 80.1,
+      "avg_stops_yr": 11.9
+    }
+  }
+}

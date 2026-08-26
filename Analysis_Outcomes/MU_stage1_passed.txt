@@ -1,0 +1,22 @@
+MU - STAGE 1 PASSED
+Date: 2026-06-26
+Method: Time Series B (XGBoost 30-day relative return)
+Decision: Proceed to Stage 2 (Backtesting)
+
+STAGE 1 RESULTS:
+- Current Price: $724.66
+- 30-Day Forecast Return: +6.24%
+- Forecast Price (mid): $771.33
+- Confidence Band: [-39.06%, +51.54%]
+- Forecast Price Range: $490.36 - $1213.29
+- Val Direction Accuracy: 74.7% (out-of-sample year 3)
+- Val RMSE: 36.92
+- Model: XGBoost direct return forecaster (Time Series B)
+- Training: 2023-08-15 to 2025-08-13 (501 rows, yrs 1-2)
+- Validation: 2025-08-14 to 2026-05-15 (190 rows, yr 3)
+
+Note: MU (Micron Technology) is a semiconductor stock -- not in current
+45-stock universe. Screened as a test case for Time Series B validation.
+Consider adding MU to Technology sector universe.
+
+NEXT STEP: Stage 2 -- trailing stop optimization backtest

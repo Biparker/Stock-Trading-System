@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              AAPL (Apple Inc.)
+Analysis Period:    2025-04-29 to 2026-04-29
+Forecast Period:    2026-04-30 to 2026-06-18
+Historical Records: 252
+Forecasted Days:    36
+Current Price:      $270.17
+
+[DATA SUMMARY]
+Start Price:        $210.29
+End Price:          $270.17
+Min Price:          $194.68
+Max Price:          $285.92
+Average Price:      $243.77
+Price Change:       +28.47%
+Volatility:         1.48%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.687597
+
+Trend:
+  Direction:        Uptrend
+  Strength:         Strong
+  R-squared:        0.6866
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 252 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 1.47%
+  Coeff of Var:     0.0001
+
+[SELECTED FORECASTING METHOD]
+Method:             Linear Regression
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-04-30   $271.11         $264.42         $277.80         $13.38    
+2026-05-01   $272.34         $265.65         $279.02         $13.38    
+2026-05-04   $273.09         $266.41         $279.78         $13.38    
+2026-05-05   $274.02         $267.33         $280.71         $13.38    
+2026-05-06   $274.91         $268.22         $281.59         $13.38    
+2026-05-07   $275.77         $269.08         $282.46         $13.38    
+2026-05-08   $276.66         $269.97         $283.35         $13.38    
+2026-05-11   $277.56         $270.87         $284.25         $13.38    
+2026-05-12   $278.47         $271.78         $285.15         $13.38    
+2026-05-13   $279.38         $272.69         $286.07         $13.38    
+2026-05-14   $280.29         $273.61         $286.98         $13.38    
+2026-05-15   $281.22         $274.53         $287.90         $13.38    
+2026-05-18   $282.14         $275.46         $288.83         $13.38    
+2026-05-19   $283.08         $276.39         $289.77         $13.38    
+2026-05-20   $284.02         $277.33         $290.71         $13.38    
+2026-05-21   $284.96         $278.27         $291.65         $13.38    
+2026-05-22   $285.91         $279.22         $292.60         $13.38    
+2026-05-25   $286.87         $280.18         $293.56         $13.38    
+2026-05-26   $287.83         $281.14         $294.52         $13.38    
+2026-05-27   $288.80         $282.11         $295.49         $13.38    
+2026-05-28   $289.77         $283.09         $296.46         $13.38    
+2026-05-29   $290.75         $284.06         $297.44         $13.38    
+2026-06-01   $291.74         $285.05         $298.43         $13.38    
+2026-06-02   $292.73         $286.04         $299.42         $13.38    
+2026-06-03   $293.72         $287.04         $300.41         $13.38    
+2026-06-04   $294.73         $288.04         $301.41         $13.38    
+2026-06-05   $295.73         $289.04         $302.42         $13.38    
+2026-06-08   $296.74         $290.06         $303.43         $13.38    
+2026-06-09   $297.76         $291.07         $304.45         $13.38    
+2026-06-10   $298.78         $292.10         $305.47         $13.38    
+2026-06-11   $299.81         $293.12         $306.50         $13.38    
+2026-06-12   $300.85         $294.16         $307.54         $13.38    
+2026-06-15   $301.89         $295.20         $308.57         $13.38    
+2026-06-16   $302.93         $296.24         $309.62         $13.38    
+2026-06-17   $303.98         $297.29         $310.67         $13.38    
+2026-06-18   $305.04         $298.35         $311.72         $13.38    
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $287.65
+Min Forecast:       $271.11
+Max Forecast:       $305.04
+Forecast Change:    +12.90%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               3.412538145053877
+MAE:                2.4585520505895206
+MAPE:               1.011754556115921
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $13.38
+  Min:              $13.38
+  Max:              $13.38
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================

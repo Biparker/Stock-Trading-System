@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              MSFT (Microsoft Corporation)
+Analysis Period:    2025-06-09 to 2026-06-05
+Forecast Period:    2026-06-06 to 2026-07-27
+Historical Records: 250
+Forecasted Days:    36
+Current Price:      $416.67
+
+[DATA SUMMARY]
+Start Price:        $469.00
+End Price:          $416.67
+Min Price:          $356.00
+Max Price:          $538.66
+Average Price:      $463.47
+Price Change:       -11.16%
+Volatility:         1.60%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.760776
+
+Trend:
+  Direction:        Downtrend
+  Strength:         Strong
+  R-squared:        0.6387
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 250 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 1.60%
+  Coeff of Var:     0.0000
+
+[SELECTED FORECASTING METHOD]
+Method:             Xgboost
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-06-08   $419.99         $417.38         $422.59         $5.20     
+2026-06-09   $422.08         $419.48         $424.68         $5.20     
+2026-06-10   $422.22         $419.61         $424.82         $5.20     
+2026-06-11   $421.70         $419.09         $424.30         $5.20     
+2026-06-12   $418.16         $415.56         $420.77         $5.20     
+2026-06-15   $418.78         $416.18         $421.38         $5.20     
+2026-06-16   $419.25         $416.65         $421.85         $5.20     
+2026-06-17   $415.80         $413.20         $418.40         $5.20     
+2026-06-18   $416.39         $413.79         $418.99         $5.20     
+2026-06-19   $424.07         $421.46         $426.67         $5.20     
+2026-06-22   $423.14         $420.54         $425.74         $5.20     
+2026-06-23   $419.66         $417.06         $422.26         $5.20     
+2026-06-24   $418.89         $416.28         $421.49         $5.20     
+2026-06-25   $419.45         $416.84         $422.05         $5.20     
+2026-06-26   $419.45         $416.84         $422.05         $5.20     
+2026-06-29   $423.10         $420.50         $425.70         $5.20     
+2026-06-30   $421.23         $418.63         $423.83         $5.20     
+2026-07-01   $420.94         $418.34         $423.54         $5.20     
+2026-07-02   $426.34         $423.74         $428.94         $5.20     
+2026-07-03   $427.53         $424.93         $430.14         $5.20     
+2026-07-06   $429.00         $426.40         $431.60         $5.20     
+2026-07-07   $424.02         $421.42         $426.62         $5.20     
+2026-07-08   $423.56         $420.95         $426.16         $5.20     
+2026-07-09   $420.72         $418.12         $423.32         $5.20     
+2026-07-10   $420.93         $418.33         $423.53         $5.20     
+2026-07-13   $420.93         $418.33         $423.53         $5.20     
+2026-07-14   $420.75         $418.14         $423.35         $5.20     
+2026-07-15   $421.04         $418.44         $423.64         $5.20     
+2026-07-16   $419.89         $417.29         $422.49         $5.20     
+2026-07-17   $418.68         $416.08         $421.28         $5.20     
+2026-07-20   $423.17         $420.57         $425.77         $5.20     
+2026-07-21   $421.03         $418.42         $423.63         $5.20     
+2026-07-22   $421.70         $419.10         $424.31         $5.20     
+2026-07-23   $421.22         $418.62         $423.82         $5.20     
+2026-07-24   $423.04         $420.43         $425.64         $5.20     
+2026-07-27   $423.12         $420.52         $425.72         $5.20     
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $421.41
+Min Forecast:       $415.80
+Max Forecast:       $429.00
+Forecast Change:    +1.55%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               1.3275857663835056
+MAE:                0.9516956676136363
+MAPE:               0.21270992492244534
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $5.20
+  Min:              $5.20
+  Max:              $5.20
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================

@@ -1,0 +1,20 @@
+PANW - STAGE 1 FAILED
+Date: 2026-07-01
+Tool: time_series_B (XGBoost 30-day relative return forecaster)
+Reason: Forecast return +2.76% is below the +5.0% minimum threshold
+
+Current Price: $242.83
+30-Day Forecast Return: +2.76%  (threshold: +5.0%)
+Confidence Band: [-36.13%, +41.65%]  (wide -- moderate uncertainty)
+Forecast Price (mid): $249.63
+Forecast Price Range: $169.20 - $368.29
+
+MODEL PERFORMANCE:
+  Train RMSE     : 9.3230   |  Train Dir Acc : 73.2%
+  Val   RMSE     : 19.9867  |  Val   Dir Acc : 58.4%  (out-of-sample)
+
+NOTE: Val Dir-Acc of 58.4% is above random -- model has some directional reliability.
+      The forecast is positive but simply not strong enough to clear the +5% gate.
+      PANW remains a technically sound stock; revisit in 30 days.
+
+DECISION: Do not proceed to Stage 2.

@@ -1,0 +1,29 @@
+# ── MeLLeA + LLM backends ────────────────────────────────────────────────────
+mellea>=0.1.0
+pydantic>=2.0.0
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+streamlit>=1.35.0
+plotly>=5.22.0
+pandas>=2.0.0
+
+# ── Forecasting ───────────────────────────────────────────────────────────────
+yfinance>=0.2.0
+numpy>=1.24.0
+scikit-learn>=1.0.0
+xgboost>=1.7.0
+statsmodels>=0.14.0
+scipy>=1.8.0
+
+# ── Sentiment analysis ────────────────────────────────────────────────────────
+transformers>=4.30.0
+torch>=2.0.0
+vaderSentiment>=3.3.2
+textblob>=0.17.0
+pdfplumber>=0.10.0
+PyPDF2>=3.0.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+requests>=2.31.0
+cryptography>=41.0.0

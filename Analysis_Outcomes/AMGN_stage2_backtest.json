@@ -1,0 +1,68 @@
+{
+  "ticker": "AMGN",
+  "date": "2026-08-04T12:04:06.738744",
+  "methodology": "ATR-based stops (Parkinson vol, High/Low trigger, time backstop)",
+  "capital_used": 1000.0,
+  "daily_mu_pct": 0.0965,
+  "parkinson_sigma_pct": 1.4301,
+  "current_price": 385.95,
+  "atr14": 11.1298,
+  "atr_pct_of_price": 2.8837,
+  "high_vol_stock": false,
+  "backstop_days": 5,
+  "backstop_threshold": 0.005,
+  "recommended_stop": "2.5xATR (7.21%)",
+  "stage2_pass": true,
+  "results": {
+    "1.0xATR (2.88%)": {
+      "multiplier": 1.0,
+      "stop_pct": 2.8837,
+      "sharpe": 0.7069,
+      "mean_ret_pct": 4.51,
+      "median_ret_pct": 2.52,
+      "p_loss_gt5": 0.0,
+      "p_profit": 74.42,
+      "avg_stops_yr": 26.0
+    },
+    "1.5xATR (4.33%)": {
+      "multiplier": 1.5,
+      "stop_pct": 4.3256,
+      "sharpe": 0.7518,
+      "mean_ret_pct": 6.86,
+      "median_ret_pct": 4.07,
+      "p_loss_gt5": 0.0,
+      "p_profit": 79.4,
+      "avg_stops_yr": 16.8
+    },
+    "2.0xATR (5.77%)": {
+      "multiplier": 2.0,
+      "stop_pct": 5.7675,
+      "sharpe": 0.765,
+      "mean_ret_pct": 9.84,
+      "median_ret_pct": 5.7,
+      "p_loss_gt5": 0.11,
+      "p_profit": 83.26,
+      "avg_stops_yr": 11.7
+    },
+    "2.5xATR (7.21%)": {
+      "multiplier": 2.5,
+      "stop_pct": 7.2094,
+      "sharpe": 0.7875,
+      "mean_ret_pct": 13.66,
+      "median_ret_pct": 8.06,
+      "p_loss_gt5": 0.2,
+      "p_profit": 86.12,
+      "avg_stops_yr": 8.5
+    },
+    "3.0xATR (8.00%)": {
+      "multiplier": 3.0,
+      "stop_pct": 8.0,
+      "sharpe": 0.7796,
+      "mean_ret_pct": 15.71,
+      "median_ret_pct": 8.98,
+      "p_loss_gt5": 0.3,
+      "p_profit": 87.24,
+      "avg_stops_yr": 7.3
+    }
+  }
+}

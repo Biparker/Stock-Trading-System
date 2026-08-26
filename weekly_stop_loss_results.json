@@ -1,0 +1,129 @@
+{
+  "simulation_parameters": {
+    "initial_capital": 1000,
+    "n_weeks": 12,
+    "mean_weekly_return": 0.0097,
+    "std_weekly_return": 0.0425,
+    "stop_loss_pct": 0.02,
+    "profit_target": 0.03,
+    "n_simulations": 10000
+  },
+  "biweekly_review": {
+    "statistics": {
+      "label": "Bi-Weekly Review",
+      "mean": 1057.5075682959168,
+      "median": 1057.7801355075003,
+      "std": 55.74322963955272,
+      "min": 885.8423808639999,
+      "max": 1194.0522965290002,
+      "mean_return_pct": 5.750756829591663,
+      "median_return_pct": 5.778013550750041,
+      "std_return_pct": 5.5743229639552725,
+      "percentiles": {
+        "10th": 983.6619271644088,
+        "25th": 1019.9966392851652,
+        "50th": 1057.7801355075003,
+        "75th": 1095.524998538873,
+        "90th": 1132.8158793309028
+      },
+      "probabilities": {
+        "positive": 84.00999999999999,
+        "above_5pct": 54.94,
+        "above_10pct": 22.64,
+        "above_15pct": 4.63,
+        "above_20pct": 0.0,
+        "below_0pct": 15.989999999999998,
+        "below_minus5pct": 2.9899999999999998,
+        "below_minus10pct": 0.08
+      }
+    },
+    "risk_metrics": {
+      "sharpe_ratio": 0.3140752412288305,
+      "sortino_ratio": 0.7928149394505174,
+      "max_drawdown_pct": -18.56593354123914,
+      "var_95_pct": -3.2961056486139793
+    },
+    "stop_loss_triggers": {
+      "mean": 1.5562,
+      "max": 6,
+      "pct_no_stops": 16.509999999999998
+    }
+  },
+  "weekly_review": {
+    "statistics": {
+      "label": "Weekly Review",
+      "mean": 1088.2913186615688,
+      "median": 1086.5803611487768,
+      "std": 77.63659118234602,
+      "min": 844.7955153221925,
+      "max": 1372.3088141981584,
+      "mean_return_pct": 8.829131866156878,
+      "median_return_pct": 8.658036114877678,
+      "std_return_pct": 7.763659118234603,
+      "percentiles": {
+        "10th": 988.7514474636309,
+        "25th": 1034.5704839435657,
+        "50th": 1086.5803611487768,
+        "75th": 1140.3082175679044,
+        "90th": 1188.7667366850662
+      },
+      "probabilities": {
+        "positive": 86.94,
+        "above_5pct": 67.99,
+        "above_10pct": 43.36,
+        "above_15pct": 21.36,
+        "above_20pct": 7.88,
+        "below_0pct": 13.059999999999999,
+        "below_minus5pct": 3.32,
+        "below_minus10pct": 0.4
+      }
+    },
+    "risk_metrics": {
+      "sharpe_ratio": 0.6220175039389142,
+      "sortino_ratio": 1.720059861086297,
+      "max_drawdown_pct": NaN,
+      "var_95_pct": -3.6233388159756164
+    },
+    "stop_loss_triggers": {
+      "mean": 2.9123,
+      "max": 9,
+      "pct_no_stops": 3.58
+    }
+  },
+  "no_stop_loss": {
+    "statistics": {
+      "label": "No Stop Loss",
+      "mean": 1010.3996454612583,
+      "median": 1011.2523579550134,
+      "std": 109.88641555383022,
+      "min": 636.1389700884743,
+      "max": 1379.5828030162015,
+      "mean_return_pct": 1.0399645461258262,
+      "median_return_pct": 1.1252357955013337,
+      "std_return_pct": 10.98864155538302,
+      "percentiles": {
+        "10th": 866.3542091505414,
+        "25th": 935.0445896214572,
+        "50th": 1011.2523579550134,
+        "75th": 1084.658377333065,
+        "90th": 1154.398111351484
+      },
+      "probabilities": {
+        "positive": 54.03,
+        "above_5pct": 36.04,
+        "above_10pct": 20.84,
+        "above_15pct": 10.67,
+        "above_20pct": 4.26,
+        "below_0pct": 45.97,
+        "below_minus5pct": 29.509999999999998,
+        "below_minus10pct": 16.38
+      }
+    },
+    "risk_metrics": {
+      "sharpe_ratio": -0.2693722821838826,
+      "sortino_ratio": -0.4664325333776687,
+      "max_drawdown_pct": -99.58975858286891,
+      "var_95_pct": -16.89560311051472
+    }
+  }
+}

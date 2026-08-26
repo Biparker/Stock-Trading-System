@@ -1,0 +1,21 @@
+QCOM - STAGE 1 FAILED
+Date: 2026-06-12
+Reason: 30-day forecast shows only +1.84% (below minimum threshold of +5%)
+Current Price: $215.94
+30-Day Forecast: $219.90
+Forecast Change: +$3.96 (+1.84%)
+36-Day Forecast: $219.90 (+1.84% - minimal growth)
+Technical Score: 36.8 (Insufficient)
+Decision: Do not proceed to backtesting
+
+Model Metrics:
+- RMSE: 1.02
+- MAE: 0.75
+- MAPE: 0.47%
+
+Additional Context:
+- Strong performance over past year (+41.88%)
+- Currently at $215.94 (below 52-week high of $250.10)
+- Forecast shows modest continuation but insufficient upside
+- Low volatility (2.99%)
+- Weak trend strength (R²=0.045)

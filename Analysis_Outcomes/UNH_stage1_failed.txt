@@ -1,0 +1,10 @@
+UNH - STAGE 1 FAILED
+Date: 2026-06-17
+Reason: 30-day forecast shows -2.09% decline (below minimum threshold of positive gain)
+Current Price: $408.64
+30-Day Forecast: $400.10
+Technical Score: N/A (failed initial screening)
+Model: Linear Regression (RMSE: 7.58, MAE: 5.10)
+Decision: Do not proceed to backtesting
+
+Analysis: Despite strong historical performance (+35.84% over past year), the model predicts short-term weakness. The weak trend strength (R²=0.197) suggests high uncertainty in near-term direction.

@@ -1,0 +1,68 @@
+{
+  "ticker": "JNJ",
+  "date": "2026-08-04T11:45:18.707052",
+  "methodology": "ATR-based stops (Parkinson vol, High/Low trigger, time backstop)",
+  "capital_used": 500.0,
+  "daily_mu_pct": 0.0755,
+  "parkinson_sigma_pct": 1.0213,
+  "current_price": 252.07,
+  "atr14": 6.2971,
+  "atr_pct_of_price": 2.4982,
+  "high_vol_stock": false,
+  "backstop_days": 5,
+  "backstop_threshold": 0.005,
+  "recommended_stop": "3.0xATR (7.49%)",
+  "stage2_pass": true,
+  "results": {
+    "1.0xATR (2.50%)": {
+      "multiplier": 1.0,
+      "stop_pct": 2.4982,
+      "sharpe": 0.7229,
+      "mean_ret_pct": 3.92,
+      "median_ret_pct": 2.22,
+      "p_loss_gt5": 0.0,
+      "p_profit": 76.81,
+      "avg_stops_yr": 21.5
+    },
+    "1.5xATR (3.75%)": {
+      "multiplier": 1.5,
+      "stop_pct": 3.7473,
+      "sharpe": 0.79,
+      "mean_ret_pct": 6.29,
+      "median_ret_pct": 3.93,
+      "p_loss_gt5": 0.0,
+      "p_profit": 82.49,
+      "avg_stops_yr": 13.5
+    },
+    "2.0xATR (5.00%)": {
+      "multiplier": 2.0,
+      "stop_pct": 4.9963,
+      "sharpe": 0.8081,
+      "mean_ret_pct": 9.36,
+      "median_ret_pct": 5.67,
+      "p_loss_gt5": 0.0,
+      "p_profit": 86.11,
+      "avg_stops_yr": 9.1
+    },
+    "2.5xATR (6.25%)": {
+      "multiplier": 2.5,
+      "stop_pct": 6.2454,
+      "sharpe": 0.8742,
+      "mean_ret_pct": 13.14,
+      "median_ret_pct": 8.26,
+      "p_loss_gt5": 0.02,
+      "p_profit": 88.59,
+      "avg_stops_yr": 6.4
+    },
+    "3.0xATR (7.49%)": {
+      "multiplier": 3.0,
+      "stop_pct": 7.4945,
+      "sharpe": 0.9498,
+      "mean_ret_pct": 16.48,
+      "median_ret_pct": 10.99,
+      "p_loss_gt5": 0.09,
+      "p_profit": 90.1,
+      "avg_stops_yr": 4.7
+    }
+  }
+}

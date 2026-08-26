@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              GILD (Gilead Sciences, Inc.)
+Analysis Period:    2025-06-09 to 2026-06-05
+Forecast Period:    2026-06-06 to 2026-07-27
+Historical Records: 250
+Forecasted Days:    36
+Current Price:      $129.16
+
+[DATA SUMMARY]
+Start Price:        $110.07
+End Price:          $129.16
+Min Price:          $103.92
+Max Price:          $154.92
+Average Price:      $124.44
+Price Change:       +17.34%
+Volatility:         1.66%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.554583
+
+Trend:
+  Direction:        Uptrend
+  Strength:         Strong
+  R-squared:        0.6862
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 250 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 1.66%
+  Coeff of Var:     0.0001
+
+[SELECTED FORECASTING METHOD]
+Method:             Xgboost
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-06-08   $131.22         $130.60         $131.84         $1.24     
+2026-06-09   $131.81         $131.19         $132.43         $1.24     
+2026-06-10   $132.59         $131.97         $133.21         $1.24     
+2026-06-11   $132.61         $131.99         $133.23         $1.24     
+2026-06-12   $133.01         $132.39         $133.63         $1.24     
+2026-06-15   $134.53         $133.91         $135.15         $1.24     
+2026-06-16   $133.36         $132.74         $133.98         $1.24     
+2026-06-17   $132.86         $132.24         $133.48         $1.24     
+2026-06-18   $132.40         $131.78         $133.01         $1.24     
+2026-06-19   $131.52         $130.91         $132.14         $1.24     
+2026-06-22   $130.24         $129.63         $130.86         $1.24     
+2026-06-23   $128.94         $128.32         $129.55         $1.24     
+2026-06-24   $129.59         $128.98         $130.21         $1.24     
+2026-06-25   $130.75         $130.13         $131.37         $1.24     
+2026-06-26   $131.15         $130.53         $131.77         $1.24     
+2026-06-29   $132.58         $131.97         $133.20         $1.24     
+2026-06-30   $133.56         $132.94         $134.18         $1.24     
+2026-07-01   $134.17         $133.55         $134.79         $1.24     
+2026-07-02   $135.13         $134.51         $135.75         $1.24     
+2026-07-03   $134.33         $133.71         $134.95         $1.24     
+2026-07-06   $132.23         $131.61         $132.85         $1.24     
+2026-07-07   $130.40         $129.78         $131.02         $1.24     
+2026-07-08   $129.13         $128.51         $129.75         $1.24     
+2026-07-09   $128.91         $128.29         $129.53         $1.24     
+2026-07-10   $129.21         $128.59         $129.83         $1.24     
+2026-07-13   $130.00         $129.38         $130.62         $1.24     
+2026-07-14   $131.79         $131.17         $132.41         $1.24     
+2026-07-15   $132.51         $131.90         $133.13         $1.24     
+2026-07-16   $132.60         $131.98         $133.22         $1.24     
+2026-07-17   $133.49         $132.87         $134.10         $1.24     
+2026-07-20   $134.58         $133.97         $135.20         $1.24     
+2026-07-21   $133.31         $132.69         $133.92         $1.24     
+2026-07-22   $132.81         $132.19         $133.43         $1.24     
+2026-07-23   $133.03         $132.41         $133.65         $1.24     
+2026-07-24   $131.84         $131.22         $132.46         $1.24     
+2026-07-27   $129.51         $128.89         $130.13         $1.24     
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $131.99
+Min Forecast:       $128.91
+Max Forecast:       $135.13
+Forecast Change:    +0.27%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               0.3156847867610429
+MAE:                0.23178870461203835
+MAPE:               0.18543087113655826
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $1.24
+  Min:              $1.24
+  Max:              $1.24
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================

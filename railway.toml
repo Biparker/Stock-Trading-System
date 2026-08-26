@@ -1,0 +1,12 @@
+# Railway deployment configuration — Stock Trading Dashboard
+# Docs: https://docs.railway.app/reference/config-as-code
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+# Start the Streamlit dashboard on Railway's dynamic $PORT
+startCommand = "streamlit run dashboard/app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true"
+restartPolicyType = "always"
+healthcheckPath = "/"
+healthcheckTimeout = 30

@@ -1,0 +1,250 @@
+{
+  "date": "2026-08-26",
+  "mode": "mock",
+  "budget": 2500.0,
+  "cash_remaining": 625.0,
+  "tickers_to_buy": [
+    "AMGN"
+  ],
+  "tickers_to_sell": [],
+  "tickers_to_hold": [
+    "JNJ",
+    "MU"
+  ],
+  "tickers_to_monitor": [
+    "META",
+    "C"
+  ],
+  "stop_loss_orders": {
+    "JNJ": 233.8,
+    "MU": 87.4
+  },
+  "combined_scores": {
+    "AMGN": 74.2,
+    "JNJ": 71.8,
+    "MU": 68.5,
+    "META": 61.0,
+    "C": 58.3
+  },
+  "user_prompt": "Good morning! Today's top action is to BUY AMGN \u2014 the XGBoost forecast shows +8.2% upside over 30 days and the backtest Sharpe is 0.79. Hold your JNJ and MU positions with trailing stops at $233.80 and $87.40 respectively. You have $625.00 cash remaining of your $2,500 budget. No sells are recommended today.",
+  "all_tickers": [
+    "AMGN",
+    "JNJ",
+    "MU",
+    "META",
+    "C"
+  ],
+  "forecast": {
+    "AMGN": {
+      "ticker": "AMGN",
+      "current_price": 385.95,
+      "target_price": 416.8,
+      "predicted_return_pct": 8.0,
+      "forecast_trend": "bullish",
+      "model_confidence": 0.82,
+      "trend_strength": "strong",
+      "recommendation": "include",
+      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
+      "forecast_results": []
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "current_price": 252.07,
+      "target_price": 267.5,
+      "predicted_return_pct": 6.1,
+      "forecast_trend": "bullish",
+      "model_confidence": 0.79,
+      "trend_strength": "moderate",
+      "recommendation": "include",
+      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
+      "forecast_results": []
+    },
+    "MU": {
+      "ticker": "MU",
+      "current_price": 112.4,
+      "target_price": 118.2,
+      "predicted_return_pct": 5.2,
+      "forecast_trend": "bullish",
+      "model_confidence": 0.71,
+      "trend_strength": "moderate",
+      "recommendation": "include",
+      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
+      "forecast_results": []
+    },
+    "META": {
+      "ticker": "META",
+      "current_price": 565.2,
+      "target_price": 551.0,
+      "predicted_return_pct": -2.5,
+      "forecast_trend": "bearish",
+      "model_confidence": 0.68,
+      "trend_strength": "weak",
+      "recommendation": "exclude",
+      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
+      "forecast_results": []
+    },
+    "C": {
+      "ticker": "C",
+      "current_price": 68.9,
+      "target_price": 71.3,
+      "predicted_return_pct": 3.5,
+      "forecast_trend": "neutral",
+      "model_confidence": 0.75,
+      "trend_strength": "moderate",
+      "recommendation": "include",
+      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
+      "forecast_results": []
+    }
+  },
+  "sentiment": {
+    "AMGN": {
+      "ticker": "AMGN",
+      "sentiment_score": 65.6,
+      "sentiment_label": "neutral",
+      "analyst_rating": "hold",
+      "confidence": 0.62,
+      "risk_level": "high",
+      "position_multiplier": 0.8,
+      "key_risks": [
+        "Pipeline uncertainty",
+        "Market competition"
+      ],
+      "recommendation": "include"
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "sentiment_score": 72.1,
+      "sentiment_label": "bullish",
+      "analyst_rating": "buy",
+      "confidence": 0.74,
+      "risk_level": "medium",
+      "position_multiplier": 1.1,
+      "key_risks": [
+        "Pipeline uncertainty",
+        "Market competition"
+      ],
+      "recommendation": "include"
+    },
+    "MU": {
+      "ticker": "MU",
+      "sentiment_score": 68.3,
+      "sentiment_label": "neutral",
+      "analyst_rating": "buy",
+      "confidence": 0.69,
+      "risk_level": "medium",
+      "position_multiplier": 1.0,
+      "key_risks": [
+        "Pipeline uncertainty",
+        "Market competition"
+      ],
+      "recommendation": "include"
+    },
+    "META": {
+      "ticker": "META",
+      "sentiment_score": 55.0,
+      "sentiment_label": "neutral",
+      "analyst_rating": "hold",
+      "confidence": 0.58,
+      "risk_level": "medium",
+      "position_multiplier": 1.0,
+      "key_risks": [
+        "Pipeline uncertainty",
+        "Market competition"
+      ],
+      "recommendation": "include"
+    },
+    "C": {
+      "ticker": "C",
+      "sentiment_score": 61.8,
+      "sentiment_label": "neutral",
+      "analyst_rating": "hold",
+      "confidence": 0.65,
+      "risk_level": "low",
+      "position_multiplier": 1.0,
+      "key_risks": [
+        "Pipeline uncertainty",
+        "Market competition"
+      ],
+      "recommendation": "include"
+    }
+  },
+  "backtest": {
+    "AMGN": {
+      "ticker": "AMGN",
+      "stage2_pass": true,
+      "recommended_stop_label": "2.5xATR (7.21%)",
+      "recommended_stop_pct": 7.21,
+      "sharpe_at_recommended": 0.787,
+      "mean_annual_return_pct": 13.66,
+      "p_loss_gt5_pct": 0.2,
+      "avg_stops_per_year": 8.5,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 27.82,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Allocate ~$500 of $2500 budget to AMGN."
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "stage2_pass": true,
+      "recommended_stop_label": "3.0xATR (7.49%)",
+      "recommended_stop_pct": 7.49,
+      "sharpe_at_recommended": 0.95,
+      "mean_annual_return_pct": 16.48,
+      "p_loss_gt5_pct": 0.09,
+      "avg_stops_per_year": 4.7,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 18.87,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Allocate ~$500 of $2500 budget to JNJ."
+    },
+    "MU": {
+      "ticker": "MU",
+      "stage2_pass": true,
+      "recommended_stop_label": "4.0%",
+      "recommended_stop_pct": 4.0,
+      "sharpe_at_recommended": 0.685,
+      "mean_annual_return_pct": 8.91,
+      "p_loss_gt5_pct": 0.0,
+      "avg_stops_per_year": 42.4,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 4.5,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Allocate ~$500 of $2500 budget to MU."
+    },
+    "META": {
+      "ticker": "META",
+      "stage2_pass": true,
+      "recommended_stop_label": "2.5%",
+      "recommended_stop_pct": 2.5,
+      "sharpe_at_recommended": 0.682,
+      "mean_annual_return_pct": 4.34,
+      "p_loss_gt5_pct": 0.0,
+      "avg_stops_per_year": 45.1,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 14.13,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Allocate ~$500 of $2500 budget to META."
+    },
+    "C": {
+      "ticker": "C",
+      "stage2_pass": true,
+      "recommended_stop_label": "5.0%",
+      "recommended_stop_pct": 5.0,
+      "sharpe_at_recommended": 0.73,
+      "mean_annual_return_pct": 9.37,
+      "p_loss_gt5_pct": 0.0,
+      "avg_stops_per_year": 11.9,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 3.45,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Allocate ~$500 of $2500 budget to C."
+    }
+  },
+  "actions_by_ticker": {
+    "AMGN": "buy",
+    "JNJ": "hold",
+    "MU": "hold",
+    "META": "monitor",
+    "C": "monitor"
+  }
+}

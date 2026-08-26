@@ -1,0 +1,30 @@
+PNC - STAGE 1 FAILED
+Date: 2026-06-15
+Reason: 30-day forecast shows -12.51% decline (below minimum threshold of +5%)
+Current Price: $237.66
+30-Day Forecast: $207.92
+Forecast Change: -12.51%
+Technical Score: N/A (negative forecast)
+Decision: Do not proceed to backtesting
+
+FORECAST DETAILS:
+- Method: XGBoost
+- RMSE: 0.46
+- MAE: 0.34
+- MAPE: 0.17%
+- Forecast Period: 36 days
+- Trend: Strong Uptrend (R²: 0.60)
+- Volatility: Low (1.36%)
+
+ANALYSIS:
+Despite showing a strong historical uptrend (+40.26% over past year), the XGBoost
+model predicts a significant decline from $237.66 to $207.92 over the next 30 days,
+representing a -12.51% decrease. This substantial predicted decline fails to meet
+the minimum upside threshold required for Stage 1 approval.
+
+The model may be detecting:
+- Overbought conditions after 40% YTD gain
+- Mean reversion pressure
+- Technical resistance at current levels
+
+RECOMMENDATION: Move to next stock in screening process.

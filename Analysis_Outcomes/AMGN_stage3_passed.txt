@@ -1,0 +1,56 @@
+AMGN - STAGE 3 PASSED
+Date: 2026-08-04
+Decision: APPROVED FOR TRADING
+PDF Source: Analyst_AMGN.pdf
+
+STAGE 1 RESULTS:
+- Current Price    : $385.92
+- 36-Day Forecast  : $453.33  (+17.47%)
+- Trend R-squared  : 0.677 (Strong)
+- Daily Volatility : 1.72% (Low)
+- Status           : PASSED
+
+STAGE 2 RESULTS:
+- Recommended Stop : 2.5xATR (7.21% trailing)
+- ATR(14)          : $11.13  (2.88% of price)
+- Sharpe Ratio     : 0.787
+- Mean Return      : +13.66% (annualized)
+- P(Loss > 5%)     : 0.20%
+- Expected Stops/Yr: 8.5
+- Status           : PASSED
+
+STAGE 3 SENTIMENT ANALYSIS RESULTS:
+- Overall Score    : 65.59 / 100
+- Classification   : NEUTRAL
+- Confidence       : 61.66%
+- Analyst Rating   : HOLD
+- EPS Estimate     : $31.00
+- Risk Level       : High (7 risk mentions)
+- Risk Adj Factor  : 0.80
+- Recommended Act  : HOLD/ACCUMULATE
+
+SECTION SENTIMENT BREAKDOWN:
+- Executive Summary: 67.21 (Neutral, 64.66% confidence)
+- Valuation        : 67.04 (Neutral, 65.04% confidence)
+- Risks            : 67.05 (Neutral, 64.77% confidence)
+- Financial Outlook: 64.22 (Neutral, 61.42% confidence)
+- Recommendation   : 65.11 (Neutral, 61.81% confidence)
+
+KEY HIGHLIGHTS:
+- Analyst rating HOLD -- more conservative than BUY but does not contradict trade
+- 7 risk mentions (High but not Very High) -- moderate concern
+- Key risks: Medicare Part D pressure on Enbrel, R&D pipeline uncertainty
+- Mitigant: diversified product roster, solid cash flows from recent acquisition
+- EPS estimate $31.00 supports valuation
+
+FINAL RECOMMENDATION:
+AMGN PASSES STAGE 3
+- Combined Score   : 71.2 / 100  [(75.0 x 0.6) + (65.59 x 0.4)]
+- Action           : BUY
+- Position Size    : 0.80x base (risk adjustment applied)
+- Trailing Stop    : 2.5xATR = 7.21% below peak
+- Stop Floor Entry : ~$385.92 - $27.84 = ~$358
+- 36-Day Target    : $453.33 (+17.47%)
+- Caution          : Analyst rates HOLD -- technical model is more bullish than analyst
+                     Reduce to 0.80x position size accordingly
+NEXT STEP: Purchase via Merrill Lynch, set 7.21% TRAILING STOP next trading day

@@ -1,0 +1,73 @@
+{
+  "ticker": "MU",
+  "date": "2026-06-30T20:51:32.278648",
+  "methodology": "3yr data, 7 trailing stop levels (2.0-5.0%), 10000 Monte Carlo sims",
+  "capital_used": 650,
+  "recommended_stop": "4.0%",
+  "stage2_pass": true,
+  "results": {
+    "2.0%": {
+      "stop_pct": 2.0,
+      "sharpe": 0.6678,
+      "mean_ret_pct": 6.11,
+      "median_ret_pct": 2.83,
+      "p_loss_gt5": 0.0,
+      "p_profit": 64.74,
+      "avg_stops_yr": 70.1
+    },
+    "2.5%": {
+      "stop_pct": 2.5,
+      "sharpe": 0.6813,
+      "mean_ret_pct": 6.72,
+      "median_ret_pct": 3.24,
+      "p_loss_gt5": 0.0,
+      "p_profit": 66.66,
+      "avg_stops_yr": 61.6
+    },
+    "3.0%": {
+      "stop_pct": 3.0,
+      "sharpe": 0.6632,
+      "mean_ret_pct": 7.4,
+      "median_ret_pct": 3.69,
+      "p_loss_gt5": 0.0,
+      "p_profit": 67.2,
+      "avg_stops_yr": 54.3
+    },
+    "3.5%": {
+      "stop_pct": 3.5000000000000004,
+      "sharpe": 0.6732,
+      "mean_ret_pct": 8.05,
+      "median_ret_pct": 4.08,
+      "p_loss_gt5": 0.0,
+      "p_profit": 69.3,
+      "avg_stops_yr": 48.0
+    },
+    "4.0%": {
+      "stop_pct": 4.0,
+      "sharpe": 0.6855,
+      "mean_ret_pct": 8.91,
+      "median_ret_pct": 4.79,
+      "p_loss_gt5": 0.0,
+      "p_profit": 71.41,
+      "avg_stops_yr": 42.4
+    },
+    "4.5%": {
+      "stop_pct": 4.5,
+      "sharpe": 0.6828,
+      "mean_ret_pct": 9.84,
+      "median_ret_pct": 5.22,
+      "p_loss_gt5": 0.0,
+      "p_profit": 72.56,
+      "avg_stops_yr": 37.4
+    },
+    "5.0%": {
+      "stop_pct": 5.0,
+      "sharpe": 0.6831,
+      "mean_ret_pct": 10.93,
+      "median_ret_pct": 5.76,
+      "p_loss_gt5": 0.0,
+      "p_profit": 73.72,
+      "avg_stops_yr": 33.3
+    }
+  }
+}

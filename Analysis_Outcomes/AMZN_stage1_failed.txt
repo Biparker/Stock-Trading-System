@@ -1,0 +1,22 @@
+AMZN - STAGE 1 FAILED
+Date: 2026-06-12
+Reason: 30-day forecast shows DECLINE of -7.17% (requires minimum +5% increase)
+Current Price: $236.70
+30-Day Forecast: $219.73
+Forecast Change: -$16.97 (-7.17%)
+36-Day Forecast: $219.73 (-7.17% decline)
+Technical Score: 15.7 (Insufficient - negative forecast)
+Decision: Do not proceed to backtesting
+
+Model Metrics:
+- RMSE: 0.86
+- MAE: 0.61
+- MAPE: 0.27%
+
+Additional Context:
+- Moderate performance over past year (+11.00%)
+- Currently at $236.70 (well below 52-week high of $274.99)
+- Model predicts pullback/correction
+- Low volatility (1.90%)
+- Weak uptrend historically (R²=0.180)
+- Forecast shows decline starting after 2 weeks

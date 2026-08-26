@@ -1,0 +1,41 @@
+META - STAGE 2 PASSED
+Date: 2026-07-02
+Decision: Proceed to Stage 3 (Sentiment Analysis)
+
+STAGE 1 CONTEXT (time_series_B run today):
+- Current Price        : $602.05
+- 30-Day Forecast      : $640.56  (+6.20%)
+- Stage 1 Signal       : PASS (threshold: +5.0%)
+
+METHODOLOGY:
+- Data: 3 years of META daily price history (771 trading days)
+- Price range over 3 years: $261.31 - $787.42
+- Mean daily return: +0.130%
+- Daily volatility: 2.303%
+- Simulations: 10,000 Monte Carlo runs per stop level
+- Stop levels tested: 2.0%, 2.5%, 3.0%, 3.5%, 4.0%, 4.5%, 5.0%
+
+COMPARISON TABLE:
+Stop %     Sharpe     Mean Ret     P(Loss>5%)     Stops/Yr   P(Profit)
+2.0%       0.672          +3.85%         0.00%      54.9      66.0%
+2.5%       0.682          +4.34%         0.00%      45.1      68.4%  <-- RECOMMENDED
+3.0%       0.671          +4.84%         0.00%      37.5      69.3%
+3.5%       0.675          +5.40%         0.00%      31.4      70.9%
+4.0%       0.668          +5.95%         0.00%      26.6      72.8%
+4.5%       0.677          +6.78%         0.00%      22.7      73.2%
+5.0%       0.676          +7.46%         0.00%      19.6      74.2%
+
+RECOMMENDED TRAILING STOP: 2.5%
+
+PERFORMANCE AT RECOMMENDED STOP:
+- Sharpe Ratio       : 0.682  [PASS: > 0.3 required]
+- Mean Annual Return : +4.34%
+- P(Loss > 5%)       : 0.00%  [PASS: < 5.0% required]
+- Expected Stops/Yr  : 45.1
+- P(Profit)          : 68.4%
+
+STAGE 2 DECISION: PASS
+NEXT STEP: Stage 3 -- Sentiment Analysis
+  Required: Download Morningstar analyst report for META from Merrill Lynch
+  Save to: stock-trading-system/sentiment_analyzer/Analyst_reports/Analyst_META.pdf
+  Run: python main.py --ticker META --pdf-path "Analyst_reports/Analyst_META.pdf"

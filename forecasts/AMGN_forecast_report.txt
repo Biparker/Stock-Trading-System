@@ -1,0 +1,116 @@
+================================================================================
+STOCK PRICE FORECAST ANALYSIS REPORT
+================================================================================
+
+[EXECUTIVE SUMMARY]
+Stock:              AMGN (Amgen Inc.)
+Analysis Period:    2025-06-09 to 2026-06-05
+Forecast Period:    2026-06-06 to 2026-07-27
+Historical Records: 250
+Forecasted Days:    36
+Current Price:      $349.58
+
+[DATA SUMMARY]
+Start Price:        $281.52
+End Price:          $349.58
+Min Price:          $264.49
+Max Price:          $385.25
+Average Price:      $317.00
+Price Change:       +24.18%
+Volatility:         1.73%
+
+[DATA CHARACTERISTICS ANALYSIS]
+
+Stationarity:
+  Status:           Non-stationary (differencing needed)
+  ADF p-value:      0.587690
+
+Trend:
+  Direction:        Uptrend
+  Strength:         Strong
+  R-squared:        0.6645
+
+Seasonality:
+  Detected:         No
+  Strength:         0.0000
+  Interpretation:   Analysis inconclusive: x must have 2 complete cycles requires 504 observations. x only has 250 observation(s)
+
+Volatility:
+  Level:            Low
+  Daily Volatility: 1.73%
+  Coeff of Var:     0.0001
+
+[SELECTED FORECASTING METHOD]
+Method:             Xgboost
+
+[FORECAST RESULTS (95% Confidence Interval)]
+
+Date         Forecast        Lower Bound     Upper Bound     Range     
+-------------------------------------------------------------------
+2026-06-08   $347.15         $345.18         $349.12         $3.94     
+2026-06-09   $345.67         $343.70         $347.64         $3.94     
+2026-06-10   $342.25         $340.28         $344.22         $3.94     
+2026-06-11   $342.51         $340.54         $344.48         $3.94     
+2026-06-12   $342.70         $340.73         $344.66         $3.94     
+2026-06-15   $338.95         $336.98         $340.92         $3.94     
+2026-06-16   $339.82         $337.85         $341.78         $3.94     
+2026-06-17   $342.76         $340.79         $344.73         $3.94     
+2026-06-18   $344.21         $342.24         $346.18         $3.94     
+2026-06-19   $341.75         $339.78         $343.72         $3.94     
+2026-06-22   $340.20         $338.23         $342.17         $3.94     
+2026-06-23   $340.80         $338.83         $342.77         $3.94     
+2026-06-24   $340.52         $338.55         $342.49         $3.94     
+2026-06-25   $340.96         $338.99         $342.93         $3.94     
+2026-06-26   $342.70         $340.73         $344.67         $3.94     
+2026-06-29   $340.87         $338.90         $342.84         $3.94     
+2026-06-30   $341.36         $339.39         $343.33         $3.94     
+2026-07-01   $341.20         $339.23         $343.17         $3.94     
+2026-07-02   $340.55         $338.58         $342.52         $3.94     
+2026-07-03   $340.55         $338.58         $342.52         $3.94     
+2026-07-06   $340.52         $338.55         $342.49         $3.94     
+2026-07-07   $340.43         $338.46         $342.40         $3.94     
+2026-07-08   $340.71         $338.74         $342.67         $3.94     
+2026-07-09   $340.70         $338.73         $342.67         $3.94     
+2026-07-10   $340.55         $338.58         $342.52         $3.94     
+2026-07-13   $339.40         $337.44         $341.37         $3.94     
+2026-07-14   $339.40         $337.44         $341.37         $3.94     
+2026-07-15   $340.43         $338.46         $342.39         $3.94     
+2026-07-16   $340.27         $338.31         $342.24         $3.94     
+2026-07-17   $340.57         $338.60         $342.54         $3.94     
+2026-07-20   $340.57         $338.60         $342.54         $3.94     
+2026-07-21   $340.50         $338.53         $342.47         $3.94     
+2026-07-22   $340.62         $338.66         $342.59         $3.94     
+2026-07-23   $340.62         $338.66         $342.59         $3.94     
+2026-07-24   $340.50         $338.53         $342.47         $3.94     
+2026-07-27   $340.50         $338.53         $342.47         $3.94     
+
+[FORECAST SUMMARY STATISTICS]
+Mean Forecast:      $341.22
+Min Forecast:       $338.95
+Max Forecast:       $347.15
+Forecast Change:    -2.60%
+
+[MODEL PERFORMANCE METRICS]
+RMSE:               1.0045327607036392
+MAE:                0.7127817327325995
+MAPE:               0.22278206171485143
+
+[RISK ASSESSMENT]
+
+Confidence Interval Width:
+  Average:          $3.94
+  Min:              $3.94
+  Max:              $3.94
+
+Key Risk Factors:
+  ⚠️  Non-stationary data - trends may not continue
+
+[DISCLAIMERS & LIMITATIONS]
+• This forecast is based on historical patterns and may not predict future prices
+• Stock prices are influenced by many factors not captured in this analysis
+• Market conditions and unexpected events can cause significant deviations
+• Do not use this forecast as sole basis for investment decisions
+• Past performance does not guarantee future results
+• Consult financial advisors before making investment decisions
+
+================================================================================
