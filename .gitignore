@@ -37,3 +37,27 @@ Thumbs.db
 # ── Plots (large PNGs regenerated on each run) ───────────────────────────────
 time_series_analyzer/output/plots/
 *.png
+Orders/
+forecasts/
+Analysis_Outcomes/
+data/positions.json
+data/pipeline_output.json
+data/earnings_cache.json
+data/jnj_pipeline_output.json
+data/nvda_output.json
+data/schw_output.json
+data/nvda_schw_output.json
+data/pipeline_run.log
+data/backtest_*.log
+atr_comparison_results.json
+time_backstop_results.json
+weekly_stop_loss_results.json
+pipeline_daily_sheet.html
+mellea-trading-pipeline-operator-instructions.html
+MERRILL_STOP_ORDER_ANALYSIS_*.md
+FINAL_ANALYSIS_REPORT_*.md
+QCOM_COMBINED_ANALYSIS_REPORT.md
+candidate_stocks.txt
+ST-suggestions.txt
+financial_sector_screening.csv
+**/*.log

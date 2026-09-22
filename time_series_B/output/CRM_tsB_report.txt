@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : CRM
+Company         : Salesforce, Inc.
+Generated       : 2026-07-01 08:36
+
+[TRAINING SETUP]
+  Total data    : 691 trading days (3 years)
+  Train period  : years 1-2  (501 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-14
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 9.7543
+  Train Dir Acc : 71.5%
+  Val   RMSE    : 13.4782  (out-of-sample)
+  Val   Dir Acc : 41.0%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  macd_line            16.0%
+  rsi_14               14.5%
+  ret_30d              13.5%
+  atr_pct              12.1%
+  vol_ratio            9.0%
+  bb_pos               8.1%
+  bb_width             7.6%
+  macd_hist            5.9%
+
+[PREDICTION]
+  Current price          : $173.06
+  30-day forecast return : +1.92%
+  Confidence band        : [-21.53% , +25.37%]
+  Forecast price (mid)   : $176.42
+  Forecast price range   : $139.54 - $223.05
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================

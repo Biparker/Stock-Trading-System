@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "ACN",
+    "company_name": "Accenture plc",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:37:02.760948",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 168.82000732421875,
+    "price_1yr_ago": 318.9,
+    "volatility_daily_pct": 1.8094
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 9.0038,
+      "mae": 7.3901,
+      "residual_std": 9.0036,
+      "direction_accuracy": 0.5709
+    },
+    "val_metrics": {
+      "rmse": 13.9183,
+      "mae": 10.63,
+      "residual_std": 12.4103,
+      "direction_accuracy": 0.5368
+    },
+    "feature_importance": {
+      "ret_1d": 0.04095444455742836,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.0866016075015068,
+      "ret_10d": 0.045880015939474106,
+      "ret_20d": 0.06985004991292953,
+      "ret_30d": 0.05551452562212944,
+      "rsi_14": 0.19377197325229645,
+      "macd_line": 0.0487421415746212,
+      "macd_signal": 0.08068505674600601,
+      "macd_hist": 0.16762153804302216,
+      "bb_pos": 0.0,
+      "bb_width": 0.09313679486513138,
+      "vol_ratio": 0.03718417137861252,
+      "atr_pct": 0.08005762845277786
+    }
+  },
+  "prediction": {
+    "current_price": 168.82000732421875,
+    "forecast_return_pct": -0.0793,
+    "lower_bound_return_pct": -24.4035,
+    "upper_bound_return_pct": 24.2449,
+    "forecast_price_mid": 168.69,
+    "forecast_price_low": 132.26,
+    "forecast_price_high": 215.14,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 2.902762,
+      "ret_2d": 5.591183,
+      "ret_3d": -0.56115,
+      "ret_5d": -6.645435,
+      "ret_10d": -6.317887,
+      "ret_20d": -15.766466,
+      "ret_30d": -16.766766,
+      "rsi_14": 0.387826,
+      "macd_line": -0.040589,
+      "macd_signal": -0.035596,
+      "macd_hist": -0.004993,
+      "bb_pos": 0.240382,
+      "bb_width": 0.197233,
+      "vol_ratio": 0.858695,
+      "atr_pct": 0.043121
+    }
+  }
+}

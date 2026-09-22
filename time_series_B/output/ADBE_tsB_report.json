@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "ADBE",
+    "company_name": "Adobe Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:36:42.173894",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 247.60000610351562,
+    "price_1yr_ago": 404.69,
+    "volatility_daily_pct": 2.1388
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 9.2103,
+      "mae": 7.3196,
+      "residual_std": 9.2103,
+      "direction_accuracy": 0.7126
+    },
+    "val_metrics": {
+      "rmse": 11.1151,
+      "mae": 8.7723,
+      "residual_std": 9.7886,
+      "direction_accuracy": 0.6474
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.017696352675557137,
+      "ret_5d": 0.019464820623397827,
+      "ret_10d": 0.0,
+      "ret_20d": 0.0,
+      "ret_30d": 0.18087394535541534,
+      "rsi_14": 0.08554775267839432,
+      "macd_line": 0.21422149240970612,
+      "macd_signal": 0.14339636266231537,
+      "macd_hist": 0.13445203006267548,
+      "bb_pos": 0.0,
+      "bb_width": 0.12226134538650513,
+      "vol_ratio": 0.0,
+      "atr_pct": 0.08208592236042023
+    }
+  },
+  "prediction": {
+    "current_price": 247.60000610351562,
+    "forecast_return_pct": -2.9001,
+    "lower_bound_return_pct": -22.0858,
+    "upper_bound_return_pct": 16.2855,
+    "forecast_price_mid": 240.52,
+    "forecast_price_low": 198.53,
+    "forecast_price_high": 291.39,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 4.371225,
+      "ret_2d": 4.768616,
+      "ret_3d": 2.772327,
+      "ret_5d": -2.173299,
+      "ret_10d": -1.248235,
+      "ret_20d": 1.280379,
+      "ret_30d": 1.90824,
+      "rsi_14": 0.509681,
+      "macd_line": -0.00387,
+      "macd_signal": -0.001363,
+      "macd_hist": -0.002507,
+      "bb_pos": 0.531447,
+      "bb_width": 0.10295,
+      "vol_ratio": 1.275897,
+      "atr_pct": 0.036195
+    }
+  }
+}

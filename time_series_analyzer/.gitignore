@@ -1,0 +1,47 @@
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Output directories
+output/
+plots/
+*.png
+*.jpg
+
+# Data
+data/
+*.csv
+*.xlsx
+
+# Test coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/

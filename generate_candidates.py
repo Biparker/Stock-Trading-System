@@ -41,6 +41,41 @@ def get_stock_data(ticker: str, days: int = 90) -> pd.DataFrame:
         return pd.DataFrame()
 
 
+def get_atr_pct(df: pd.DataFrame, period: int = 14) -> float:
+    """Return 14-day ATR as a percentage of the most recent close price.
+
+    Uses the standard true-range formula:
+        TR = max(High-Low, |High-PrevClose|, |Low-PrevClose|)
+    Returns 0.0 if there is insufficient data.
+    """
+    if df.empty or len(df) < period + 1:
+        return 0.0
+    high  = df['High']
+    low   = df['Low']
+    close = df['Close']
+    prev_close = close.shift(1)
+    tr = pd.concat([
+        high - low,
+        (high - prev_close).abs(),
+        (low  - prev_close).abs(),
+    ], axis=1).max(axis=1)
+    atr = tr.rolling(period).mean().iloc[-1]
+    current_price = close.iloc[-1]
+    if current_price <= 0:
+        return 0.0
+    return float(atr / current_price * 100)
+
+
+def get_20day_return(df: pd.DataFrame) -> float:
+    """Return the 20-trading-day price return as a percentage.
+
+    Returns -999.0 (always filtered) if there is insufficient data.
+    """
+    if df.empty or len(df) < 21:
+        return -999.0
+    return float((df['Close'].iloc[-1] / df['Close'].iloc[-21] - 1) * 100)
+
+
 def get_fundamental_data(ticker: str) -> Dict:
     """Get fundamental metrics for screening."""
     try:
@@ -67,24 +102,26 @@ def passes_stability_filters(fundamentals: Dict, sector: str = 'Technology') -> 
     """Apply stability screening filters."""
     if not fundamentals:
         return False
-    
+
     # Sector-specific adjustments
     pe_max = 50 if sector == 'Technology' else 40
-    de_max = 3.0 if sector == 'Technology' else 2.5
-    
+    # yfinance returns debtToEquity as a percentage (e.g. 29.1 means 0.291 ratio)
+    # so thresholds are expressed in those same percentage-point units
+    de_max = 300.0 if sector == 'Technology' else 250.0
+
     # Apply filters - more lenient for real-world data
     checks = [
         fundamentals['market_cap'] >= 10_000_000_000,  # $10B minimum
         fundamentals['pe_ratio'] > 0,  # Must have positive P/E
         fundamentals['profit_margin'] > 0,  # Must be profitable
     ]
-    
+
     # Optional checks (don't fail if missing)
     if fundamentals['pe_ratio'] > 0:
         checks.append(fundamentals['pe_ratio'] <= pe_max)
     if fundamentals['debt_to_equity'] > 0:
         checks.append(fundamentals['debt_to_equity'] <= de_max)
-    
+
     return all(checks)
 
 
@@ -141,65 +178,83 @@ def calculate_composite_score(ticker: str, fundamentals: Dict, df: pd.DataFrame)
 def generate_candidates(selected_sectors: List[str] = None, num_candidates: int = 7) -> List[Tuple[str, float, Dict]]:
     """
     Generate ranked list of candidate stocks.
-    
+
     Args:
         selected_sectors: List of sectors to analyze (default: Technology, Healthcare)
         num_candidates: Number of top candidates to return (default: 7)
-    
+
     Returns:
         List of tuples: (ticker, composite_score, fundamentals)
+        fundamentals now includes 'atr_pct' (14-day ATR as % of price) and
+        'return_20d' (20-day price return %) used for MeLLeA volatility-scaled sizing.
     """
     if selected_sectors is None:
         selected_sectors = ['Technology', 'Healthcare']
-    
+
     print(f"\n{'='*70}")
     print(f"GENERATING {num_candidates} CANDIDATE STOCKS")
     print(f"{'='*70}")
     print(f"Selected Sectors: {', '.join(selected_sectors)}")
     print(f"\nPhase 1: Collecting stock universe...")
-    
-    # Collect all stocks from selected sectors
+
+    # Collect all stocks from selected sectors — deduplicate so a ticker that
+    # appears in multiple sector lists is only evaluated once.
+    seen: set = set()
     stock_universe = []
     for sector in selected_sectors:
-        if sector in SECTOR_STOCKS:
-            stock_universe.extend(SECTOR_STOCKS[sector])
-    
+        for ticker in SECTOR_STOCKS.get(sector, []):
+            if ticker not in seen:
+                seen.add(ticker)
+                stock_universe.append(ticker)
+
     print(f"Total stocks to analyze: {len(stock_universe)}")
-    
+
     # Phase 2: Screen for stability
     print(f"\nPhase 2: Applying stability filters...")
     screened_stocks = []
-    
+
     for ticker in stock_universe:
         print(f"  Analyzing {ticker}...", end=' ')
         fundamentals = get_fundamental_data(ticker)
-        
+
         if fundamentals and passes_stability_filters(fundamentals, selected_sectors[0]):
             screened_stocks.append((ticker, fundamentals))
             print("[PASSED]")
         else:
             print("[FILTERED]")
-    
+
     print(f"\nStocks passing filters: {len(screened_stocks)}")
-    
-    # Phase 3: Rank by composite score
-    print(f"\nPhase 3: Calculating composite scores...")
+
+    # Phase 3: Rank by composite score + apply 20-day momentum filter
+    print(f"\nPhase 3: Calculating composite scores (momentum filter active)...")
     ranked_stocks = []
-    
+
     for ticker, fundamentals in screened_stocks:
         print(f"  Scoring {ticker}...", end=' ')
         df = get_stock_data(ticker)
-        
-        if not df.empty:
-            score = calculate_composite_score(ticker, fundamentals, df)
-            ranked_stocks.append((ticker, score, fundamentals))
-            print(f"Score: {score:.2f}")
-        else:
+
+        if df.empty:
             print("[NO DATA]")
-    
+            continue
+
+        # ── 20-day momentum filter ────────────────────────────────────────────
+        ret_20d = get_20day_return(df)
+        if ret_20d < 0:
+            print(f"[MOMENTUM FILTER] 20d return={ret_20d:.2f}% — skipped")
+            continue
+
+        # ── ATR% for volatility-scaled sizing ────────────────────────────────
+        atr_pct = get_atr_pct(df)
+        fundamentals['atr_pct']    = round(atr_pct, 4)
+        fundamentals['return_20d'] = round(ret_20d, 4)
+
+        score = calculate_composite_score(ticker, fundamentals, df)
+        ranked_stocks.append((ticker, score, fundamentals))
+        print(f"Score: {score:.2f}  ATR%: {atr_pct:.2f}  20d: {ret_20d:+.2f}%")
+
     # Sort by score (descending)
     ranked_stocks.sort(key=lambda x: x[1], reverse=True)
-    
+
     # Return top N candidates
     top_candidates = ranked_stocks[:num_candidates]
     

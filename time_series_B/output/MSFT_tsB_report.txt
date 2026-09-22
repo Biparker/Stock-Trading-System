@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : MSFT
+Company         : Microsoft Corporation
+Generated       : 2026-07-01 08:36
+
+[TRAINING SETUP]
+  Total data    : 691 trading days (3 years)
+  Train period  : years 1-2  (501 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-14
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 6.6179
+  Train Dir Acc : 64.3%
+  Val   RMSE    : 10.6653  (out-of-sample)
+  Val   Dir Acc : 34.7%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  atr_pct              27.1%
+  ret_5d               20.1%
+  macd_signal          8.9%
+  macd_line            8.8%
+  bb_width             7.5%
+  ret_30d              7.2%
+  ret_1d               5.8%
+  rsi_14               5.7%
+
+[PREDICTION]
+  Current price          : $421.01
+  30-day forecast return : +3.19%
+  Confidence band        : [-12.99% , +19.36%]
+  Forecast price (mid)   : $434.65
+  Forecast price range   : $369.74 - $510.96
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================

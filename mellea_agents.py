@@ -10,7 +10,7 @@ Each function is decorated with @mellea.function, which:
 Backend is configured in daily_pipeline.py via mellea.configure().
 """
 
-import mellea
+import mellea_shim as mellea
 
 from mellea_schemas import (
     CandidateList,
@@ -30,6 +30,7 @@ from mellea_schemas import (
         "all tickers must be from the S&P500 Financial, Technology, or Healthcare sectors",
         "budget_per_position multiplied by the number of tickers must not exceed 2500",
         "sectors_represented must list every sector that appears in the tickers list",
+        "no ticker may appear more than once in the tickers list",
     ]
 )
 def select_candidates(sector_screen_summary: str, budget: float = 2500.0) -> CandidateList:
@@ -39,18 +40,22 @@ def select_candidates(sector_screen_summary: str, budget: float = 2500.0) -> Can
 
     The following S&P500 equities have passed an initial stability screen across
     the Financial, Technology, and Healthcare sectors. Each entry shows the
-    composite score, P/E ratio, profit margin, and current price:
+    composite score, P/E ratio, profit margin, current price, 14-day ATR as a
+    percentage of price (atr_pct), and 20-day return (return_20d):
 
     {sector_screen_summary}
 
     Your task:
     1. Select 3-5 equities or ETFs that are most likely to outperform their peers.
        Favour stocks with strong momentum, low debt, and positive profit margins.
-    2. Allocate an equal dollar amount per position. The total invested
-       (budget_per_position × number_of_tickers) must not exceed ${budget}.
+    2. Allocate positions inversely proportional to each stock's atr_pct — a stock
+       with higher ATR gets a smaller dollar allocation (volatility-scaled sizing).
+       The total invested (budget_per_position × number_of_tickers) must not exceed
+       ${budget}.
     3. Include at least one stock from each of the Financial, Technology, and
        Healthcare sectors if candidates are available from all three.
-    4. Provide a plain-English rationale for your selections.
+    4. Each ticker must appear exactly once. Do not repeat a ticker.
+    5. Provide a plain-English rationale for your selections.
     """
 
 
@@ -61,6 +66,8 @@ def select_candidates(sector_screen_summary: str, budget: float = 2500.0) -> Can
     rules=[
         "if predicted_return_pct > 5 then forecast_trend must be 'bullish' or 'strongly_bullish'",
         "if predicted_return_pct < -5 then forecast_trend must be 'bearish' or 'strongly_bearish'",
+        "if abs(predicted_return_pct) < 1.0 then forecast_trend must be 'neutral' — "
+        "a near-zero forecast drift is not bearish or bullish",
         "model_confidence must be derived from model_metrics: high confidence if mape < 1.0, "
         "medium if mape < 3.0, low otherwise",
         "recommendation must be 'include' if forecast_trend is bullish, strongly_bullish, "
@@ -77,23 +84,30 @@ def interpret_forecast(ticker: str, forecast_json: str) -> ForecastDecision:
     {forecast_json}
 
     The JSON contains:
-    - metadata: ticker, company name, forecast period dates
+    - metadata: ticker, company name, forecast period dates, forecast_horizon_days
     - current_metrics: current_price, price_change_pct, volatility_pct
     - data_characteristics: trend direction, R-squared, stationarity
     - selected_method: the forecasting model used (xgboost, linear_regression, etc.)
-    - forecast_results: list of daily {date, forecast, lower_bound, upper_bound}
+    - forecast_results: list of daily [date, forecast, lower_bound, upper_bound]
     - forecast_summary: mean, min, max, change_pct over the forecast window
     - model_metrics: rmse, mae, mape
 
     Your task:
     1. Determine the overall forecast trend direction and strength.
     2. Set target_price to the final forecast value in forecast_results.
-    3. Compute predicted_return_pct as (target_price - current_price) / current_price * 100.
-    4. Assess model confidence from model_metrics.mape:
+    3. Use forecast_summary.change_pct as the authoritative predicted_return_pct.
+       Only fall back to computing (target_price - current_price) / current_price * 100
+       if forecast_summary.change_pct is absent.
+    4. FLAT-ZONE RULE: if |predicted_return_pct| < 1.0, the forecast is essentially
+       flat — set forecast_trend to 'neutral' and recommendation to 'include'
+       (do not treat near-zero drift as bearish).
+    5. Assess model confidence from model_metrics.mape:
        - mape < 1.0  → confidence ≥ 0.8
        - mape < 3.0  → confidence ≈ 0.6
        - mape >= 3.0 → confidence ≤ 0.5
-    5. Decide whether to include or exclude this stock based on trend and confidence.
+    6. If forecast_horizon_days is present and <= 7, treat this as a short-horizon
+       forecast and cap model_confidence at 0.7 regardless of mape.
+    7. Decide whether to include or exclude this stock based on trend and confidence.
     """
 
 
@@ -107,6 +121,8 @@ def interpret_forecast(ticker: str, forecast_json: str) -> ForecastDecision:
         "if risk_level is 'high' or 'very_high' then position_multiplier must be <= 0.85",
         "key_risks must contain no more than 3 items",
         "analyst_rating must reflect the rating field in extracted_metrics if present",
+        "if report_age_days is present and report_age_days > 90 then confidence must be "
+        "reduced by 20% relative to the raw model confidence (multiply by 0.8)",
     ],
     sampling="rejection"   # retry until all IVR rules pass
 )
@@ -123,6 +139,7 @@ def interpret_sentiment(ticker: str, sentiment_report: str) -> SentimentSignal:
     - section_sentiments: per-section scores (executive summary, valuation, risks, etc.)
     - risk_assessment: risk_level (low/medium/high/very_high), risk_mentions, risk_adjustment
     - extracted_metrics: price_target, rating, eps_estimate (when available)
+    - report_age_days: number of days since the analyst report was published (if available)
 
     Your task:
     1. Set sentiment_score and sentiment_label from overall_sentiment.
@@ -134,6 +151,8 @@ def interpret_sentiment(ticker: str, sentiment_report: str) -> SentimentSignal:
        - Clamp result between 0.3 and 1.5
     5. Extract up to 3 concrete risk factors from the report text.
     6. Recommend 'include' if score >= 40, 'exclude' if score < 40.
+    7. FRESHNESS: if report_age_days > 90, reduce confidence by 20% (multiply by 0.8)
+       to reflect that the analyst view may be stale.
     """
 
 
@@ -149,7 +168,10 @@ def interpret_sentiment(ticker: str, sentiment_report: str) -> SentimentSignal:
         "failure_reason must be set when stage2_pass is False",
         "stop_dollar_amount must be computed as (recommended_stop_pct / 100) * current_price "
         "when current_price is present in the data",
+        "stop_dollar_amount is the RISK PER SHARE (stop distance), NOT the allocation amount — "
+        "position_size_advice must make this distinction explicit",
         "position_size_advice must reference the $2500 total portfolio budget",
+        "max_position_pct must be set to a percentage of the $2500 budget (0-100)",
     ]
 )
 def interpret_backtest(ticker: str, backtest_data: str) -> BacktestSignal:
@@ -163,7 +185,7 @@ def interpret_backtest(ticker: str, backtest_data: str) -> BacktestSignal:
     The JSON contains:
     - stage2_pass: boolean pass/fail
     - recommended_stop: the best stop level label
-    - results: dict of stop-level → {sharpe, mean_ret_pct, p_loss_gt5, p_profit, avg_stops_yr}
+    - results: dict of stop-level -> [sharpe, mean_ret_pct, p_loss_gt5, p_profit, avg_stops_yr]
     - For ATR-based backtests: atr14, atr_pct_of_price, high_vol_stock, current_price
     - Acceptance criteria: Sharpe > 0.3 AND P(Loss > 5%) < 5.0%
 
@@ -175,8 +197,17 @@ def interpret_backtest(ticker: str, backtest_data: str) -> BacktestSignal:
     4. Set is_high_volatility from high_vol_stock if present, else False.
     5. Compute stop_dollar_amount = (recommended_stop_pct / 100) × current_price
        if current_price is available in the data.
-    6. Write position_size_advice as plain English for a retail investor with $2500 total budget,
-       mentioning how much to allocate to this position given its volatility profile.
+       IMPORTANT: stop_dollar_amount is the RISK PER SHARE (how many dollars the
+       price can drop before the stop triggers). It is NOT the amount to invest.
+    6. Compute max_position_pct: the maximum percentage of the $2500 budget to
+       allocate to this position. Use a risk-fraction of 1% of budget per trade:
+         max_shares = (2500 * 0.01) / stop_dollar_amount
+         max_allocation = max_shares * current_price
+         max_position_pct = min(max_allocation / 2500 * 100, 40.0)
+       Cap at 40% so no single position dominates the portfolio.
+    7. Write position_size_advice as plain English. Example:
+       "Stop distance is $15.28/share (risk per share). With a 1% risk budget of
+       $25, you can hold ~1 share. Suggested allocation: ~10% of your $2500 = $250."
     """
 
 
@@ -188,13 +219,16 @@ def interpret_backtest(ticker: str, backtest_data: str) -> BacktestSignal:
     rules=[
         "cash_remaining must be >= 0",
         "total invested (sum of position sizes) plus cash_remaining must not exceed 2500",
-        "tickers_to_buy must only contain tickers where both forecast and backtest "
-        "recommend 'include'",
+        "tickers_to_buy must only contain tickers where forecast, backtest, AND sentiment "
+        "all recommend 'include' — all three signals must agree before buying",
         "tickers_to_sell must not overlap with tickers_to_hold",
         "stop_loss_orders must contain an entry for every ticker in tickers_to_hold",
         "user_prompt must be written in plain English for a non-expert retail investor",
         "user_prompt must mention the total number of positions, cash remaining, "
         "and at least one specific action the user should take today",
+        "user_prompt must explain WHY each monitored ticker is not being bought today "
+        "(which signal is blocking it) and what price or condition would trigger a buy",
+        "buy_trigger_prices must contain an entry for every ticker in tickers_to_monitor",
     ]
 )
 def daily_advisor(
@@ -202,8 +236,10 @@ def daily_advisor(
     forecast_decisions: str,
     sentiment_signals: str,
     backtest_signals: str,
+    combined_scores: str,
     cash_available: float,
     today_date: str,
+    data_ages: str,
 ) -> DailyAction:
     """
     You are a daily trading advisor for a retail investor with a ${cash_available}
@@ -224,9 +260,15 @@ def daily_advisor(
     3-year backtest signals (one per candidate ticker):
     {backtest_signals}
 
+    Pre-computed combined scores (forecast_confidence × 60% + sentiment_score/100 × 40%) × 100:
+    {combined_scores}
+
+    Data ages for each signal source (integer days old, or "no file found"):
+    {data_ages}
+
     Your task — produce today's DailyAction:
     1. tickers_to_buy: new positions to open today. Only include tickers where
-       both the forecast AND backtest recommend 'include'. Do not exceed
+       forecast, backtest, AND sentiment all recommend 'include'. Do not exceed
        cash_available when buying.
     2. tickers_to_sell: positions to close. Include if stop-loss has been hit
        or forecast has turned bearish.
@@ -235,11 +277,21 @@ def daily_advisor(
     5. stop_loss_orders: for every held position, provide the exact dollar stop price
        taken from the backtest signal's stop_dollar_amount.
     6. cash_remaining: ${cash_available} minus total value of new buy positions.
-    7. combined_scores: weighted score per ticker:
-       (forecast model_confidence × 60%) + (sentiment_score/100 × 40%) × 100
-    8. user_prompt: a plain-English daily briefing (3-5 sentences) telling the user
-       exactly what to do today — which stocks to buy or sell, where to set stops,
-       and how much cash they have left.
+    7. combined_scores: copy the pre-computed scores from the input — do NOT recompute them.
+    8. buy_trigger_prices: for every monitored ticker, state the forecast target price
+       that would flip its recommendation to 'include'.
+    9. user_prompt: a plain-English daily briefing (4-6 sentences). For each monitored
+       ticker explain which signal is blocking a buy and what would change the decision.
+       Include stop prices for all held positions and the cash balance.
+       After the briefing, append a Data Currency section as a markdown table with
+       the heading "**Data Currency:**" followed by a blank line, then the table:
+
+         | Ticker | XGBoost Forecast | Analyst Report | Backtest |
+         |--------|------------------|----------------|----------|
+
+       One row per ticker. Use the integer day count (e.g. "3 days") for each cell,
+       or "no file found" when the source file was absent. Use "1 day" for 1, "N days"
+       for N > 1, and "0 days" for 0.
     """
 
 # Made with Bob

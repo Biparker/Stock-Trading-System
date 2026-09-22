@@ -2,6 +2,10 @@
 
 import os
 import sys
+
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 from data_fetcher import DataFetcherAgent
 from feature_selector import FeatureSelector
 from method_recommender import MethodRecommenderAgent

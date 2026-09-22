@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "MU",
+    "company_name": "Micron Technology, Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-12T20:17:18.416191",
+    "data_start": "2023-08-25T00:00:00",
+    "data_end": "2026-05-27T00:00:00",
+    "train_cutoff": "2025-08-24",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 690,
+    "train_rows": 500,
+    "val_rows": 190,
+    "current_price": 928.2672119140625,
+    "price_1yr_ago": 96.14,
+    "volatility_daily_pct": 3.7229
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 16.4547,
+      "mae": 12.7989,
+      "residual_std": 16.4545,
+      "direction_accuracy": 0.678
+    },
+    "val_metrics": {
+      "rmse": 36.3318,
+      "mae": 29.551,
+      "residual_std": 23.4432,
+      "direction_accuracy": 0.8316
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.09162300080060959,
+      "ret_5d": 0.0,
+      "ret_10d": 0.0932653471827507,
+      "ret_20d": 0.06586258113384247,
+      "ret_30d": 0.10432383418083191,
+      "rsi_14": 0.0,
+      "macd_line": 0.14390288293361664,
+      "macd_signal": 0.10673008859157562,
+      "macd_hist": 0.07743674516677856,
+      "bb_pos": 0.0,
+      "bb_width": 0.1486337035894394,
+      "vol_ratio": 0.040629640221595764,
+      "atr_pct": 0.12759214639663696
+    }
+  },
+  "prediction": {
+    "current_price": 928.2672119140625,
+    "forecast_return_pct": 5.2955,
+    "lower_bound_return_pct": -40.6532,
+    "upper_bound_return_pct": 51.2441,
+    "forecast_price_mid": 978.75,
+    "forecast_price_low": 618.18,
+    "forecast_price_high": 1549.61,
+    "signal": "PASS",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 3.566693,
+      "ret_2d": 21.206776,
+      "ret_3d": 19.739567,
+      "ret_5d": 28.419468,
+      "ret_10d": 19.153431,
+      "ret_20d": 61.03219,
+      "ret_30d": 69.001763,
+      "rsi_14": 0.764545,
+      "macd_line": 0.096076,
+      "macd_signal": 0.083971,
+      "macd_hist": 0.012105,
+      "bb_pos": 0.985258,
+      "bb_width": 0.639562,
+      "vol_ratio": 1.338871,
+      "atr_pct": 0.071925
+    }
+  }
+}

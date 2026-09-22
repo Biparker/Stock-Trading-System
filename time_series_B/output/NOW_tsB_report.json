@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "NOW",
+    "company_name": "ServiceNow, Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:36:56.450150",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 95.06999969482422,
+    "price_1yr_ago": 207.04,
+    "volatility_daily_pct": 2.5246
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 10.2543,
+      "mae": 8.124,
+      "residual_std": 10.2543,
+      "direction_accuracy": 0.6427
+    },
+    "val_metrics": {
+      "rmse": 18.9225,
+      "mae": 15.0676,
+      "residual_std": 13.7627,
+      "direction_accuracy": 0.2684
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.0,
+      "ret_10d": 0.0,
+      "ret_20d": 0.016536084935069084,
+      "ret_30d": 0.17325524985790253,
+      "rsi_14": 0.19834822416305542,
+      "macd_line": 0.09368622303009033,
+      "macd_signal": 0.16205774247646332,
+      "macd_hist": 0.12478853017091751,
+      "bb_pos": 0.0,
+      "bb_width": 0.07005903869867325,
+      "vol_ratio": 0.0,
+      "atr_pct": 0.1612689346075058
+    }
+  },
+  "prediction": {
+    "current_price": 95.06999969482422,
+    "forecast_return_pct": 5.6012,
+    "lower_bound_return_pct": -21.3737,
+    "upper_bound_return_pct": 32.5761,
+    "forecast_price_mid": 100.55,
+    "forecast_price_low": 76.77,
+    "forecast_price_high": 131.68,
+    "signal": "PASS",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 4.926361,
+      "ret_2d": 8.813076,
+      "ret_3d": 6.597709,
+      "ret_5d": 4.177788,
+      "ret_10d": 4.199721,
+      "ret_20d": -1.658625,
+      "ret_30d": -7.035935,
+      "rsi_14": 0.520387,
+      "macd_line": -0.02157,
+      "macd_signal": -0.029416,
+      "macd_hist": 0.007846,
+      "bb_pos": 0.674737,
+      "bb_width": 0.197115,
+      "vol_ratio": 1.219007,
+      "atr_pct": 0.052888
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "PANW",
+    "company_name": "Palo Alto Networks, Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:36:10.256708",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 242.8300018310547,
+    "price_1yr_ago": 192.9,
+    "volatility_daily_pct": 2.5405
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 9.323,
+      "mae": 7.3426,
+      "residual_std": 9.323,
+      "direction_accuracy": 0.7325
+    },
+    "val_metrics": {
+      "rmse": 19.9867,
+      "mae": 15.5447,
+      "residual_std": 19.8418,
+      "direction_accuracy": 0.5842
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.08120449632406235,
+      "ret_10d": 0.0,
+      "ret_20d": 0.055620286613702774,
+      "ret_30d": 0.062959685921669,
+      "rsi_14": 0.1407453715801239,
+      "macd_line": 0.10854335874319077,
+      "macd_signal": 0.06492099910974503,
+      "macd_hist": 0.12572404742240906,
+      "bb_pos": 0.17023713886737823,
+      "bb_width": 0.06093630567193031,
+      "vol_ratio": 0.05867573618888855,
+      "atr_pct": 0.07043252140283585
+    }
+  },
+  "prediction": {
+    "current_price": 242.8300018310547,
+    "forecast_return_pct": 2.7607,
+    "lower_bound_return_pct": -36.1293,
+    "upper_bound_return_pct": 41.6506,
+    "forecast_price_mid": 249.63,
+    "forecast_price_low": 169.2,
+    "forecast_price_high": 368.29,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 1.920895,
+      "ret_2d": 6.39375,
+      "ret_3d": 11.893675,
+      "ret_5d": 15.54006,
+      "ret_10d": 29.342268,
+      "ret_20d": 36.929086,
+      "ret_30d": 39.732386,
+      "rsi_14": 0.861012,
+      "macd_line": 0.068949,
+      "macd_signal": 0.045521,
+      "macd_hist": 0.023429,
+      "bb_pos": 1.048382,
+      "bb_width": 0.460154,
+      "vol_ratio": 1.587882,
+      "atr_pct": 0.044497
+    }
+  }
+}

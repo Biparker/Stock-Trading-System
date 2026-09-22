@@ -1,76 +1,68 @@
 {
   "ticker": "META",
-  "company": "Meta Platforms, Inc.",
-  "date": "2026-07-02T09:37:08.598544",
-  "methodology": "3yr data, 7 trailing stop levels (2.0-5.0%), 10000 Monte Carlo sims",
-  "capital_used": 1000,
-  "daily_mu_pct": 0.1304,
-  "daily_sigma_pct": 2.3027,
-  "recommended_stop": "2.5%",
+  "date": "2026-09-08T17:28:28.666196",
+  "methodology": "ATR-based stops (Parkinson vol, High/Low trigger, time backstop)",
+  "capital_used": 500.0,
+  "daily_mu_pct": 0.1187,
+  "parkinson_sigma_pct": 1.7663,
+  "current_price": 613.48,
+  "atr14": 17.9336,
+  "atr_pct_of_price": 2.9233,
+  "high_vol_stock": false,
+  "backstop_days": 5,
+  "backstop_threshold": 0.005,
+  "recommended_stop": "2.5xATR (7.31%)",
   "stage2_pass": true,
   "results": {
-    "2.0%": {
-      "stop_pct": 2.0,
-      "sharpe": 0.6724,
-      "mean_ret_pct": 3.85,
-      "median_ret_pct": 1.92,
+    "1.0xATR (2.92%)": {
+      "multiplier": 1.0,
+      "stop_pct": 2.9233,
+      "sharpe": 0.6945,
+      "mean_ret_pct": 4.7,
+      "median_ret_pct": 2.57,
       "p_loss_gt5": 0.0,
-      "p_profit": 65.99,
-      "avg_stops_yr": 54.9
+      "p_profit": 72.54,
+      "avg_stops_yr": 31.3
     },
-    "2.5%": {
-      "stop_pct": 2.5,
-      "sharpe": 0.6825,
-      "mean_ret_pct": 4.34,
-      "median_ret_pct": 2.19,
+    "1.5xATR (4.38%)": {
+      "multiplier": 1.5,
+      "stop_pct": 4.3849,
+      "sharpe": 0.728,
+      "mean_ret_pct": 6.81,
+      "median_ret_pct": 3.91,
       "p_loss_gt5": 0.0,
-      "p_profit": 68.41,
-      "avg_stops_yr": 45.1
+      "p_profit": 76.86,
+      "avg_stops_yr": 20.6
     },
-    "3.0%": {
-      "stop_pct": 3.0,
-      "sharpe": 0.6713,
-      "mean_ret_pct": 4.84,
-      "median_ret_pct": 2.54,
-      "p_loss_gt5": 0.0,
-      "p_profit": 69.28,
-      "avg_stops_yr": 37.5
+    "2.0xATR (5.85%)": {
+      "multiplier": 2.0,
+      "stop_pct": 5.8465,
+      "sharpe": 0.7321,
+      "mean_ret_pct": 9.59,
+      "median_ret_pct": 5.51,
+      "p_loss_gt5": 0.33,
+      "p_profit": 80.53,
+      "avg_stops_yr": 14.9
     },
-    "3.5%": {
-      "stop_pct": 3.5000000000000004,
-      "sharpe": 0.6751,
-      "mean_ret_pct": 5.4,
-      "median_ret_pct": 2.82,
-      "p_loss_gt5": 0.0,
-      "p_profit": 70.88,
-      "avg_stops_yr": 31.4
+    "2.5xATR (7.31%)": {
+      "multiplier": 2.5,
+      "stop_pct": 7.3081,
+      "sharpe": 0.7471,
+      "mean_ret_pct": 13.1,
+      "median_ret_pct": 7.55,
+      "p_loss_gt5": 0.5,
+      "p_profit": 84.12,
+      "avg_stops_yr": 11.1
     },
-    "4.0%": {
-      "stop_pct": 4.0,
-      "sharpe": 0.6677,
-      "mean_ret_pct": 5.95,
-      "median_ret_pct": 3.26,
-      "p_loss_gt5": 0.0,
-      "p_profit": 72.82,
-      "avg_stops_yr": 26.6
-    },
-    "4.5%": {
-      "stop_pct": 4.5,
-      "sharpe": 0.6772,
-      "mean_ret_pct": 6.78,
-      "median_ret_pct": 3.62,
-      "p_loss_gt5": 0.0,
-      "p_profit": 73.23,
-      "avg_stops_yr": 22.7
-    },
-    "5.0%": {
-      "stop_pct": 5.0,
-      "sharpe": 0.6759,
-      "mean_ret_pct": 7.46,
-      "median_ret_pct": 4.05,
-      "p_loss_gt5": 0.0,
-      "p_profit": 74.18,
-      "avg_stops_yr": 19.6
+    "3.0xATR (8.00%)": {
+      "multiplier": 3.0,
+      "stop_pct": 8.0,
+      "sharpe": 0.7299,
+      "mean_ret_pct": 14.45,
+      "median_ret_pct": 8.23,
+      "p_loss_gt5": 0.57,
+      "p_profit": 84.93,
+      "avg_stops_yr": 9.8
     }
   }
 }

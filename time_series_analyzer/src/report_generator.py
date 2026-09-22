@@ -192,6 +192,18 @@ class ReportGenerator:
                 'upper_bound': float(self.forecast_result['confidence_interval']['upper'][i]),
             })
 
+        # Build price history for dashboard two-panel chart.
+        # Includes train/val split index so the chart can colour each segment.
+        split_idx = int(len(self.data) * 0.8)
+        price_history = [
+            {
+                'date': str(row['date'])[:10],
+                'close': float(row['close']),
+                'split': 'train' if i < split_idx else 'val',
+            }
+            for i, row in self.data[['date', 'close']].iterrows()
+        ]
+
         return {
             'metadata': {
                 'ticker': self.ticker,
@@ -219,6 +231,7 @@ class ReportGenerator:
                 'volatility': self.analysis['volatility'],
             },
             'selected_method': self.selected_method,
+            'price_history': price_history,
             'forecast_results': forecast_data,
             'forecast_summary': {
                 'mean': float(self.forecast_result['forecast'].mean()),

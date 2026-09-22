@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "MSFT",
+    "company_name": "Microsoft Corporation",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:36:35.375072",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 421.0081481933594,
+    "price_1yr_ago": 449.54,
+    "volatility_daily_pct": 1.4812
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 6.6179,
+      "mae": 5.2724,
+      "residual_std": 6.6179,
+      "direction_accuracy": 0.6427
+    },
+    "val_metrics": {
+      "rmse": 10.6653,
+      "mae": 8.6549,
+      "residual_std": 8.2526,
+      "direction_accuracy": 0.3474
+    },
+    "feature_importance": {
+      "ret_1d": 0.058137133717536926,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.2011985033750534,
+      "ret_10d": 0.0,
+      "ret_20d": 0.03598245233297348,
+      "ret_30d": 0.07174347341060638,
+      "rsi_14": 0.057203639298677444,
+      "macd_line": 0.08847463130950928,
+      "macd_signal": 0.08948700875043869,
+      "macd_hist": 0.05129925534129143,
+      "bb_pos": 0.0,
+      "bb_width": 0.07529759407043457,
+      "vol_ratio": 0.0,
+      "atr_pct": 0.2711763083934784
+    }
+  },
+  "prediction": {
+    "current_price": 421.0081481933594,
+    "forecast_return_pct": 3.1897,
+    "lower_bound_return_pct": -12.9854,
+    "upper_bound_return_pct": 19.3648,
+    "forecast_price_mid": 434.65,
+    "forecast_price_low": 369.74,
+    "forecast_price_high": 510.96,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 3.004979,
+      "ret_2d": 4.041028,
+      "ret_3d": 3.41125,
+      "ret_5d": 1.62481,
+      "ret_10d": 1.788752,
+      "ret_20d": -0.205991,
+      "ret_30d": 12.200486,
+      "rsi_14": 0.579043,
+      "macd_line": 0.008022,
+      "macd_signal": 0.011141,
+      "macd_hist": -0.003119,
+      "bb_pos": 0.647319,
+      "bb_width": 0.073417,
+      "vol_ratio": 1.469931,
+      "atr_pct": 0.027105
+    }
+  }
+}

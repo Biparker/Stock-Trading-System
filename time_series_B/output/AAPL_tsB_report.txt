@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : AAPL
+Company         : Apple Inc.
+Generated       : 2026-07-12 20:09
+
+[TRAINING SETUP]
+  Total data    : 690 trading days (3 years)
+  Train period  : years 1-2  (500 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-24
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 7.4112
+  Train Dir Acc : 66.0%
+  Val   RMSE    : 7.1807  (out-of-sample)
+  Val   Dir Acc : 71.6%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  bb_width             16.6%
+  ret_30d              11.7%
+  macd_line            9.7%
+  macd_hist            9.7%
+  bb_pos               9.5%
+  ret_10d              8.7%
+  rsi_14               8.2%
+  atr_pct              7.4%
+
+[PREDICTION]
+  Current price          : $310.85
+  30-day forecast return : +2.87%
+  Confidence band        : [-10.87% , +16.60%]
+  Forecast price (mid)   : $319.88
+  Forecast price range   : $278.82 - $366.99
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================

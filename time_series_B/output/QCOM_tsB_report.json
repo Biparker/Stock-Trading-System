@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "QCOM",
+    "company_name": "QUALCOMM Incorporated",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-01T08:36:38.756594",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 200.74855041503906,
+    "price_1yr_ago": 148.57,
+    "volatility_daily_pct": 2.4943
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 9.3825,
+      "mae": 7.4788,
+      "residual_std": 9.3825,
+      "direction_accuracy": 0.6727
+    },
+    "val_metrics": {
+      "rmse": 21.4901,
+      "mae": 14.8127,
+      "residual_std": 21.317,
+      "direction_accuracy": 0.5316
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.0840320810675621,
+      "ret_10d": 0.06453888863325119,
+      "ret_20d": 0.07487131655216217,
+      "ret_30d": 0.07453233003616333,
+      "rsi_14": 0.06673363596200943,
+      "macd_line": 0.09059936553239822,
+      "macd_signal": 0.084840327501297,
+      "macd_hist": 0.0913119986653328,
+      "bb_pos": 0.09835467487573624,
+      "bb_width": 0.05170566961169243,
+      "vol_ratio": 0.05508118122816086,
+      "atr_pct": 0.16339851915836334
+    }
+  },
+  "prediction": {
+    "current_price": 200.74855041503906,
+    "forecast_return_pct": 1.093,
+    "lower_bound_return_pct": -40.6883,
+    "upper_bound_return_pct": 42.8743,
+    "forecast_price_mid": 202.95,
+    "forecast_price_low": 133.64,
+    "forecast_price_high": 308.21,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 0.702249,
+      "ret_2d": -5.635017,
+      "ret_3d": -4.284285,
+      "ret_5d": -8.374277,
+      "ret_10d": 12.953355,
+      "ret_20d": 39.161547,
+      "ret_30d": 46.312871,
+      "rsi_14": 0.623418,
+      "macd_line": 0.097398,
+      "macd_signal": 0.08729,
+      "macd_hist": 0.010109,
+      "bb_pos": 0.6923,
+      "bb_width": 0.725334,
+      "vol_ratio": 0.875863,
+      "atr_pct": 0.08512
+    }
+  }
+}

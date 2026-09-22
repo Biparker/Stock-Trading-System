@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : PANW
+Company         : Palo Alto Networks, Inc.
+Generated       : 2026-07-01 08:36
+
+[TRAINING SETUP]
+  Total data    : 691 trading days (3 years)
+  Train period  : years 1-2  (501 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-14
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 9.323
+  Train Dir Acc : 73.2%
+  Val   RMSE    : 19.9867  (out-of-sample)
+  Val   Dir Acc : 58.4%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  bb_pos               17.0%
+  rsi_14               14.1%
+  macd_hist            12.6%
+  macd_line            10.9%
+  ret_5d               8.1%
+  atr_pct              7.0%
+  macd_signal          6.5%
+  ret_30d              6.3%
+
+[PREDICTION]
+  Current price          : $242.83
+  30-day forecast return : +2.76%
+  Confidence band        : [-36.13% , +41.65%]
+  Forecast price (mid)   : $249.63
+  Forecast price range   : $169.20 - $368.29
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================

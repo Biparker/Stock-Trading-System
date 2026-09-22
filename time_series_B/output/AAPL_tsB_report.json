@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "AAPL",
+    "company_name": "Apple Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-12T20:09:21.892794",
+    "data_start": "2023-08-25T00:00:00",
+    "data_end": "2026-05-27T00:00:00",
+    "train_cutoff": "2025-08-24",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 690,
+    "train_rows": 500,
+    "val_rows": 190,
+    "current_price": 310.8500061035156,
+    "price_1yr_ago": 199.42,
+    "volatility_daily_pct": 1.6605
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 7.4112,
+      "mae": 5.7573,
+      "residual_std": 7.4112,
+      "direction_accuracy": 0.66
+    },
+    "val_metrics": {
+      "rmse": 7.1807,
+      "mae": 5.7682,
+      "residual_std": 7.0095,
+      "direction_accuracy": 0.7158
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.0,
+      "ret_10d": 0.08736354857683182,
+      "ret_20d": 0.06918610632419586,
+      "ret_30d": 0.11687508225440979,
+      "rsi_14": 0.08191236853599548,
+      "macd_line": 0.0966213196516037,
+      "macd_signal": 0.07139542698860168,
+      "macd_hist": 0.09654420614242554,
+      "bb_pos": 0.09459338337182999,
+      "bb_width": 0.16646331548690796,
+      "vol_ratio": 0.04469432681798935,
+      "atr_pct": 0.07435089349746704
+    }
+  },
+  "prediction": {
+    "current_price": 310.8500061035156,
+    "forecast_return_pct": 2.8651,
+    "lower_bound_return_pct": -10.8736,
+    "upper_bound_return_pct": 16.6037,
+    "forecast_price_mid": 319.88,
+    "forecast_price_low": 278.82,
+    "forecast_price_high": 366.99,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": 0.813991,
+      "ret_2d": 0.655189,
+      "ret_3d": 1.903154,
+      "ret_5d": 3.896726,
+      "ret_10d": 5.301338,
+      "ret_20d": 13.918327,
+      "ret_30d": 18.405999,
+      "rsi_14": 0.791,
+      "macd_line": 0.033245,
+      "macd_signal": 0.030507,
+      "macd_hist": 0.002739,
+      "bb_pos": 0.860984,
+      "bb_width": 0.165905,
+      "vol_ratio": 1.024045,
+      "atr_pct": 0.017531
+    }
+  }
+}

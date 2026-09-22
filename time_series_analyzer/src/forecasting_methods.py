@@ -496,6 +496,17 @@ class XGBoostForecaster(ForecastingBase):
         self.metrics['mae'] = mean_absolute_error(y, y_pred)
         self.metrics['mape'] = self._calculate_mape(y, y_pred)
 
+        # Extra metrics for dashboard two-panel chart
+        residuals = y - y_pred
+        self.metrics['residual_std'] = float(np.std(residuals))
+        direction_correct = int(np.sum(np.sign(np.diff(y)) == np.sign(np.diff(y_pred))))
+        self.metrics['direction_accuracy'] = float(direction_correct / max(len(y) - 1, 1))
+        split_idx = int(len(self.data) * 0.8)
+        self.metrics['train_cutoff_date'] = (
+            str(self.data['date'].iloc[split_idx])
+            if 'date' in self.data.columns else None
+        )
+
     def _calculate_macd(self, data, fast=12, slow=26, signal=9):
         """Calculate MACD line, signal line, and histogram."""
         df = pd.DataFrame({'close': data})

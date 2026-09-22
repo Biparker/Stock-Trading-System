@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : MU
+Company         : Micron Technology, Inc.
+Generated       : 2026-07-12 20:17
+
+[TRAINING SETUP]
+  Total data    : 690 trading days (3 years)
+  Train period  : years 1-2  (500 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-24
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 16.4547
+  Train Dir Acc : 67.8%
+  Val   RMSE    : 36.3318  (out-of-sample)
+  Val   Dir Acc : 83.2%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  bb_width             14.9%
+  macd_line            14.4%
+  atr_pct              12.8%
+  macd_signal          10.7%
+  ret_30d              10.4%
+  ret_10d              9.3%
+  ret_3d               9.2%
+  macd_hist            7.7%
+
+[PREDICTION]
+  Current price          : $928.27
+  30-day forecast return : +5.30%
+  Confidence band        : [-40.65% , +51.24%]
+  Forecast price (mid)   : $978.75
+  Forecast price range   : $618.18 - $1549.61
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [PASS] PASS
+======================================================================

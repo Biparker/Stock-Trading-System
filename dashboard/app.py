@@ -112,6 +112,27 @@ if user_prompt:
     st.info(f"**Daily Briefing:** {user_prompt}")
 st.divider()
 
+# ── Event Calendar Alerts ─────────────────────────────────────────────────────
+event_alerts = data.get("event_alerts", [])
+if event_alerts:
+    st.subheader("⚠️ Upcoming Events (next " + str(data.get("event_guard_window", 10)) + " days)")
+    for alert in event_alerts:
+        ticker   = alert.get("ticker", "")
+        etype    = alert.get("event_type", "").replace("_", " ").title()
+        edate    = alert.get("event_date", "")
+        days     = alert.get("days_until_event", 0)
+        sev      = alert.get("severity", "info")
+        ctx      = alert.get("position_context", "").title()
+        rec      = alert.get("recommendation", "")
+        msg      = f"**{ticker}** [{ctx}] — {etype} on {edate} ({days} day{'s' if days != 1 else ''})  \n{rec}"
+        if sev == "critical":
+            st.error(msg)
+        elif sev == "warning":
+            st.warning(msg)
+        else:
+            st.info(msg)
+    st.divider()
+
 # ── Row 2: Portfolio Combined Scores ──────────────────────────────────────────
 st.subheader("📊 MeLLeA Combined Scores — All Candidates")
 combined_scores = data.get("combined_scores", {})
@@ -194,6 +215,9 @@ with tab1:
             selected_ticker,
             stop_price=stop_price,
             entry_price=current_price if current_price else None,
+            price_history=forecast_meta.get("price_history"),
+            model_metrics=forecast_meta.get("model_metrics"),
+            forecast_signal=forecast_signal if forecast_signal else None,
         ),
         use_container_width=True,
     )

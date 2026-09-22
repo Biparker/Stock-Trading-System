@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : ADBE
+Company         : Adobe Inc.
+Generated       : 2026-07-01 08:36
+
+[TRAINING SETUP]
+  Total data    : 691 trading days (3 years)
+  Train period  : years 1-2  (501 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-14
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 9.2103
+  Train Dir Acc : 71.3%
+  Val   RMSE    : 11.1151  (out-of-sample)
+  Val   Dir Acc : 64.7%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  macd_line            21.4%
+  ret_30d              18.1%
+  macd_signal          14.3%
+  macd_hist            13.4%
+  bb_width             12.2%
+  rsi_14               8.6%
+  atr_pct              8.2%
+  ret_5d               1.9%
+
+[PREDICTION]
+  Current price          : $247.60
+  30-day forecast return : -2.90%
+  Confidence band        : [-22.09% , +16.29%]
+  Forecast price (mid)   : $240.52
+  Forecast price range   : $198.53 - $291.39
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================

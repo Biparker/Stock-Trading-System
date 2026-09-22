@@ -118,11 +118,20 @@ class BacktestSignal(BaseModel):
     is_high_volatility: bool
     stop_dollar_amount: Optional[float] = Field(
         default=None,
-        description="Stop distance in dollars = (stop_pct/100) * current_price"
+        description="Stop distance in dollars = (stop_pct/100) * current_price. "
+                    "This is the RISK PER SHARE, not the allocation amount."
+    )
+    max_position_pct: Optional[float] = Field(
+        default=None,
+        ge=0.0,
+        le=100.0,
+        description="Maximum percentage of the $2500 budget to allocate to this position. "
+                    "Computed as: min((2500*0.01/stop_dollar) * price / 2500 * 100, 40.0)"
     )
     portfolio_action: Literal["include_with_stop", "exclude_failed_backtest"]
     position_size_advice: str = Field(
-        description="Plain-English sizing advice referencing the $2500 total budget"
+        description="Plain-English sizing advice referencing the $2500 total budget. "
+                    "Must clarify that stop_dollar_amount is risk-per-share, not the allocation."
     )
 
     @model_validator(mode='after')
@@ -134,6 +143,24 @@ class BacktestSignal(BaseModel):
         if not self.stage2_pass and not self.failure_reason:
             raise ValueError("failure_reason required when stage2_pass=False")
         return self
+
+
+class EventAlert(BaseModel):
+    """A single upcoming earnings or ex-dividend event alert for a held/planned position."""
+
+    ticker: str
+    event_type: Literal["earnings", "ex_dividend"]
+    event_date: str = Field(description="ISO date string YYYY-MM-DD of the upcoming event")
+    days_until_event: int = Field(ge=0)
+    position_context: Literal["hold", "buy", "monitor"] = Field(
+        description="Whether this ticker is currently held, planned to buy, or being monitored"
+    )
+    severity: Literal["info", "warning", "critical"] = Field(
+        description="critical = within 3 days, warning = 4-7 days, info = 8+ days"
+    )
+    recommendation: str = Field(
+        description="Plain-English one-liner advising action (e.g. 'Consider reducing position before earnings')"
+    )
 
 
 class DailyAction(BaseModel):
@@ -159,6 +186,15 @@ class DailyAction(BaseModel):
     )
     combined_scores: Dict[str, float] = Field(
         description="Mapping of ticker -> combined score (0-100) used for decisions"
+    )
+    buy_trigger_prices: Dict[str, float] = Field(
+        default_factory=dict,
+        description="Mapping of monitored ticker -> forecast target price that would flip "
+                    "the recommendation to 'include'"
+    )
+    event_alerts: List["EventAlert"] = Field(
+        default_factory=list,
+        description="Upcoming earnings and ex-dividend alerts for held/planned positions"
     )
 
 # Made with Bob

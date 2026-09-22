@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "META",
+    "company_name": "Meta Platforms, Inc.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-07-02T09:32:47.844979",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-19T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 693,
+    "train_rows": 501,
+    "val_rows": 192,
+    "current_price": 602.052001953125,
+    "price_1yr_ago": 637.85,
+    "volatility_daily_pct": 2.2973
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 10.027,
+      "mae": 7.4592,
+      "residual_std": 10.027,
+      "direction_accuracy": 0.7585
+    },
+    "val_metrics": {
+      "rmse": 12.8831,
+      "mae": 10.7016,
+      "residual_std": 7.95,
+      "direction_accuracy": 0.3438
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.0,
+      "ret_3d": 0.0,
+      "ret_5d": 0.0,
+      "ret_10d": 0.09617431461811066,
+      "ret_20d": 0.012111890129745007,
+      "ret_30d": 0.13032929599285126,
+      "rsi_14": 0.14640292525291443,
+      "macd_line": 0.09944625943899155,
+      "macd_signal": 0.15279878675937653,
+      "macd_hist": 0.13534389436244965,
+      "bb_pos": 0.09330369532108307,
+      "bb_width": 0.0,
+      "vol_ratio": 0.022555693984031677,
+      "atr_pct": 0.11153335124254227
+    }
+  },
+  "prediction": {
+    "current_price": 602.052001953125,
+    "forecast_return_pct": 6.2004,
+    "lower_bound_return_pct": -9.3816,
+    "upper_bound_return_pct": 21.7824,
+    "forecast_price_mid": 640.56,
+    "forecast_price_low": 548.14,
+    "forecast_price_high": 748.57,
+    "signal": "PASS",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": -1.417038,
+      "ret_2d": -1.909925,
+      "ret_3d": -2.59138,
+      "ret_5d": -0.064699,
+      "ret_10d": -0.389214,
+      "ret_20d": -10.427469,
+      "ret_30d": 4.681324,
+      "rsi_14": 0.414701,
+      "macd_line": -0.012071,
+      "macd_signal": -0.008032,
+      "macd_hist": -0.00404,
+      "bb_pos": 0.280852,
+      "bb_width": 0.187379,
+      "vol_ratio": 0.731427,
+      "atr_pct": 0.024537
+    }
+  }
+}

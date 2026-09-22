@@ -1,250 +1,444 @@
 {
-  "date": "2026-08-26",
-  "mode": "mock",
+  "date": "2026-09-18",
+  "mode": "live",
   "budget": 2500.0,
-  "cash_remaining": 625.0,
-  "tickers_to_buy": [
-    "AMGN"
-  ],
-  "tickers_to_sell": [],
-  "tickers_to_hold": [
-    "JNJ",
-    "MU"
-  ],
-  "tickers_to_monitor": [
-    "META",
-    "C"
-  ],
-  "stop_loss_orders": {
-    "JNJ": 233.8,
-    "MU": 87.4
-  },
-  "combined_scores": {
-    "AMGN": 74.2,
-    "JNJ": 71.8,
-    "MU": 68.5,
-    "META": 61.0,
-    "C": 58.3
-  },
-  "user_prompt": "Good morning! Today's top action is to BUY AMGN \u2014 the XGBoost forecast shows +8.2% upside over 30 days and the backtest Sharpe is 0.79. Hold your JNJ and MU positions with trailing stops at $233.80 and $87.40 respectively. You have $625.00 cash remaining of your $2,500 budget. No sells are recommended today.",
   "all_tickers": [
-    "AMGN",
-    "JNJ",
-    "MU",
+    "NVDA",
     "META",
-    "C"
+    "CVS",
+    "CRM",
+    "JNJ",
+    "QCOM",
+    "BMY"
   ],
   "forecast": {
-    "AMGN": {
-      "ticker": "AMGN",
-      "current_price": 385.95,
-      "target_price": 416.8,
-      "predicted_return_pct": 8.0,
-      "forecast_trend": "bullish",
-      "model_confidence": 0.82,
-      "trend_strength": "strong",
+    "NVDA": {
+      "ticker": "NVDA",
+      "forecast_trend": "neutral",
+      "current_price": 211.8800048828125,
+      "target_price": 208.7899627685547,
+      "predicted_return_pct": -1.4583925066298098,
+      "model_confidence": 0.6,
+      "trend_strength": "weak",
       "recommendation": "include",
-      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
-      "forecast_results": []
-    },
-    "JNJ": {
-      "ticker": "JNJ",
-      "current_price": 252.07,
-      "target_price": 267.5,
-      "predicted_return_pct": 6.1,
-      "forecast_trend": "bullish",
-      "model_confidence": 0.79,
-      "trend_strength": "moderate",
-      "recommendation": "include",
-      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
-      "forecast_results": []
-    },
-    "MU": {
-      "ticker": "MU",
-      "current_price": 112.4,
-      "target_price": 118.2,
-      "predicted_return_pct": 5.2,
-      "forecast_trend": "bullish",
-      "model_confidence": 0.71,
-      "trend_strength": "moderate",
-      "recommendation": "include",
-      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
-      "forecast_results": []
+      "reasoning": "The forecast trend is neutral with low confidence, but still warrants inclusion."
     },
     "META": {
       "ticker": "META",
-      "current_price": 565.2,
-      "target_price": 551.0,
-      "predicted_return_pct": -2.5,
-      "forecast_trend": "bearish",
-      "model_confidence": 0.68,
-      "trend_strength": "weak",
-      "recommendation": "exclude",
-      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
-      "forecast_results": []
-    },
-    "C": {
-      "ticker": "C",
-      "current_price": 68.9,
-      "target_price": 71.3,
-      "predicted_return_pct": 3.5,
       "forecast_trend": "neutral",
-      "model_confidence": 0.75,
-      "trend_strength": "moderate",
+      "current_price": 647.4559326171875,
+      "target_price": 614.9705200195312,
+      "predicted_return_pct": -5.0,
+      "model_confidence": 0.6,
+      "trend_strength": "weak",
       "recommendation": "include",
-      "reasoning": "Based on XGBoost 30-day forecast and model metrics.",
-      "forecast_results": []
+      "reasoning": "The forecast indicates a neutral trend with a predicted return close to zero and moderate confidence."
+    },
+    "CVS": {
+      "ticker": "CVS",
+      "forecast_trend": "neutral",
+      "current_price": 95.72193908691406,
+      "target_price": 95.72193908691406,
+      "predicted_return_pct": 0.0,
+      "model_confidence": 0.7,
+      "trend_strength": "weak",
+      "recommendation": "include",
+      "reasoning": "The forecast trend is neutral with a predicted return of 0%, and model confidence is capped at 0.7 due to the short forecast horizon."
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "forecast_trend": "bearish",
+      "current_price": 260.1099853515625,
+      "target_price": 228.8207244873047,
+      "predicted_return_pct": -12.029242484469602,
+      "model_confidence": 0.6,
+      "trend_strength": "moderate",
+      "recommendation": "exclude",
+      "reasoning": "The forecast indicates a bearish trend with moderate strength and medium confidence."
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "forecast_trend": "neutral",
+      "current_price": 269.5877685546875,
+      "target_price": 269.1997985839844,
+      "predicted_return_pct": -0.1436582026720934,
+      "model_confidence": 0.7,
+      "trend_strength": "weak",
+      "recommendation": "include",
+      "reasoning": "The forecast indicates a neutral trend with low predicted return and moderate confidence."
+    },
+    "QCOM": {
+      "ticker": "QCOM",
+      "forecast_trend": "neutral",
+      "current_price": 170.0,
+      "target_price": 168.6023406982422,
+      "predicted_return_pct": -0.232,
+      "model_confidence": 0.7,
+      "trend_strength": "weak",
+      "recommendation": "include",
+      "reasoning": "The forecast indicates a neutral trend with low predicted return and moderate confidence."
+    },
+    "BMY": {
+      "ticker": "BMY",
+      "forecast_trend": "neutral",
+      "current_price": 64.12000274658203,
+      "target_price": 64.13321685791016,
+      "predicted_return_pct": 0.020608407302087003,
+      "model_confidence": 0.7,
+      "trend_strength": "weak",
+      "recommendation": "include",
+      "reasoning": "The forecast trend is neutral with low predicted return and sufficient model confidence."
     }
   },
   "sentiment": {
-    "AMGN": {
-      "ticker": "AMGN",
-      "sentiment_score": 65.6,
+    "NVDA": {
+      "ticker": "NVDA",
+      "sentiment_score": 69.19972272589803,
       "sentiment_label": "neutral",
-      "analyst_rating": "hold",
-      "confidence": 0.62,
+      "analyst_rating": "buy",
+      "confidence": 0.6698765754699707,
       "risk_level": "high",
       "position_multiplier": 0.8,
       "key_risks": [
-        "Pipeline uncertainty",
-        "Market competition"
-      ],
-      "recommendation": "include"
-    },
-    "JNJ": {
-      "ticker": "JNJ",
-      "sentiment_score": 72.1,
-      "sentiment_label": "bullish",
-      "analyst_rating": "buy",
-      "confidence": 0.74,
-      "risk_level": "medium",
-      "position_multiplier": 1.1,
-      "key_risks": [
-        "Pipeline uncertainty",
-        "Market competition"
-      ],
-      "recommendation": "include"
-    },
-    "MU": {
-      "ticker": "MU",
-      "sentiment_score": 68.3,
-      "sentiment_label": "neutral",
-      "analyst_rating": "buy",
-      "confidence": 0.69,
-      "risk_level": "medium",
-      "position_multiplier": 1.0,
-      "key_risks": [
-        "Pipeline uncertainty",
-        "Market competition"
+        "elevated exposure to a select few hyperscalers",
+        "high cyclicality of the gaming industry",
+        "need to maintain adequate R&D spending"
       ],
       "recommendation": "include"
     },
     "META": {
       "ticker": "META",
-      "sentiment_score": 55.0,
-      "sentiment_label": "neutral",
-      "analyst_rating": "hold",
-      "confidence": 0.58,
+      "sentiment_score": 71.46730478852987,
+      "sentiment_label": "bullish",
+      "analyst_rating": "unknown",
+      "confidence": 0.6757580637931824,
       "risk_level": "medium",
-      "position_multiplier": 1.0,
+      "position_multiplier": 1.15,
       "key_risks": [
-        "Pipeline uncertainty",
-        "Market competition"
+        "changing technologies and tastes",
+        "considerable competitive threats",
+        "legal and regulatory issues"
       ],
       "recommendation": "include"
     },
-    "C": {
-      "ticker": "C",
-      "sentiment_score": 61.8,
+    "CVS": {
+      "ticker": "CVS",
+      "sentiment_score": 69.19793198506038,
       "sentiment_label": "neutral",
-      "analyst_rating": "hold",
-      "confidence": 0.65,
-      "risk_level": "low",
+      "analyst_rating": "buy",
+      "confidence": 0.6522508859634399,
+      "risk_level": "medium",
       "position_multiplier": 1.0,
       "key_risks": [
-        "Pipeline uncertainty",
-        "Market competition"
+        "ongoing operational challenges in the pharmacy and retail businesses",
+        "membership losses in health services",
+        "exit from Individual exchange markets"
+      ],
+      "recommendation": "include"
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "sentiment_score": 63.728716131299734,
+      "sentiment_label": "neutral",
+      "analyst_rating": "unknown",
+      "confidence": 0.6191956996917725,
+      "risk_level": "high",
+      "position_multiplier": 0.8,
+      "key_risks": [
+        "execution challenges",
+        "market share",
+        "innovation leadership"
+      ],
+      "recommendation": "include"
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "sentiment_score": 64.05543080634541,
+      "sentiment_label": "neutral",
+      "analyst_rating": "buy",
+      "confidence": 0.6193112134933472,
+      "risk_level": "very_high",
+      "position_multiplier": 0.6,
+      "key_risks": [
+        "unpredictable nature of R&D pipelines",
+        "drug patent challenges",
+        "potential for adverse legal rulings"
+      ],
+      "recommendation": "include"
+    },
+    "QCOM": {
+      "ticker": "QCOM",
+      "sentiment_score": 73.03236434236169,
+      "sentiment_label": "bullish",
+      "analyst_rating": "unknown",
+      "confidence": 0.6924147605895996,
+      "risk_level": "high",
+      "position_multiplier": 0.8,
+      "key_risks": [
+        "litigation risks related to its code-division multiple access (CDMA) patents",
+        "potentially weaker demand from customers",
+        "high risk assessment mentions"
+      ],
+      "recommendation": "include"
+    },
+    "BMY": {
+      "ticker": "BMY",
+      "sentiment_score": 63.70461082551628,
+      "sentiment_label": "neutral",
+      "analyst_rating": "hold",
+      "confidence": 0.5549328923225403,
+      "risk_level": "high",
+      "position_multiplier": 0.8,
+      "key_risks": [
+        "Competing brand-name drugs",
+        "Generic and biosimilar makers",
+        "Expensive clinical trials and FDA regulatory hurdles"
       ],
       "recommendation": "include"
     }
   },
   "backtest": {
-    "AMGN": {
-      "ticker": "AMGN",
+    "NVDA": {
+      "ticker": "NVDA",
       "stage2_pass": true,
-      "recommended_stop_label": "2.5xATR (7.21%)",
-      "recommended_stop_pct": 7.21,
-      "sharpe_at_recommended": 0.787,
-      "mean_annual_return_pct": 13.66,
-      "p_loss_gt5_pct": 0.2,
-      "avg_stops_per_year": 8.5,
+      "failure_reason": null,
+      "recommended_stop_label": "2.0xATR (6.17%)",
+      "recommended_stop_pct": 6.1697,
+      "sharpe_at_recommended": 0.725,
+      "mean_annual_return_pct": 12.57,
+      "p_loss_gt5_pct": 0.69,
+      "avg_stops_per_year": 17.0,
       "is_high_volatility": false,
-      "stop_dollar_amount": 27.82,
+      "stop_dollar_amount": 13.617,
+      "max_position_pct": 10.0,
       "portfolio_action": "include_with_stop",
-      "position_size_advice": "Allocate ~$500 of $2500 budget to AMGN."
-    },
-    "JNJ": {
-      "ticker": "JNJ",
-      "stage2_pass": true,
-      "recommended_stop_label": "3.0xATR (7.49%)",
-      "recommended_stop_pct": 7.49,
-      "sharpe_at_recommended": 0.95,
-      "mean_annual_return_pct": 16.48,
-      "p_loss_gt5_pct": 0.09,
-      "avg_stops_per_year": 4.7,
-      "is_high_volatility": false,
-      "stop_dollar_amount": 18.87,
-      "portfolio_action": "include_with_stop",
-      "position_size_advice": "Allocate ~$500 of $2500 budget to JNJ."
-    },
-    "MU": {
-      "ticker": "MU",
-      "stage2_pass": true,
-      "recommended_stop_label": "4.0%",
-      "recommended_stop_pct": 4.0,
-      "sharpe_at_recommended": 0.685,
-      "mean_annual_return_pct": 8.91,
-      "p_loss_gt5_pct": 0.0,
-      "avg_stops_per_year": 42.4,
-      "is_high_volatility": false,
-      "stop_dollar_amount": 4.5,
-      "portfolio_action": "include_with_stop",
-      "position_size_advice": "Allocate ~$500 of $2500 budget to MU."
+      "position_size_advice": "Stop distance is $13.62/share (risk per share). With a 1% risk budget of $25, you can hold ~1 share. Suggested allocation: ~10% of your $2500 = $250."
     },
     "META": {
       "ticker": "META",
       "stage2_pass": true,
-      "recommended_stop_label": "2.5%",
-      "recommended_stop_pct": 2.5,
-      "sharpe_at_recommended": 0.682,
-      "mean_annual_return_pct": 4.34,
-      "p_loss_gt5_pct": 0.0,
-      "avg_stops_per_year": 45.1,
+      "failure_reason": null,
+      "recommended_stop_label": "2.5xATR (7.31%)",
+      "recommended_stop_pct": 7.3081,
+      "sharpe_at_recommended": 0.7471,
+      "mean_annual_return_pct": 13.1,
+      "p_loss_gt5_pct": 0.5,
+      "avg_stops_per_year": 11.1,
       "is_high_volatility": false,
-      "stop_dollar_amount": 14.13,
+      "stop_dollar_amount": 44.91,
+      "max_position_pct": 11.25,
       "portfolio_action": "include_with_stop",
-      "position_size_advice": "Allocate ~$500 of $2500 budget to META."
+      "position_size_advice": "Stop distance is $44.91/share (risk per share). With a 1% risk budget of $25, you can hold ~0 shares. Suggested allocation: ~11.25% of your $2500 = $281.25."
     },
-    "C": {
-      "ticker": "C",
+    "CVS": {
+      "ticker": "CVS",
       "stage2_pass": true,
-      "recommended_stop_label": "5.0%",
-      "recommended_stop_pct": 5.0,
-      "sharpe_at_recommended": 0.73,
-      "mean_annual_return_pct": 9.37,
-      "p_loss_gt5_pct": 0.0,
-      "avg_stops_per_year": 11.9,
+      "failure_reason": null,
+      "recommended_stop_label": "2.5xATR (5.44%)",
+      "recommended_stop_pct": 5.4364,
+      "sharpe_at_recommended": 0.7263,
+      "mean_annual_return_pct": 7.4,
+      "p_loss_gt5_pct": 0.2,
+      "avg_stops_per_year": 16.4,
       "is_high_volatility": false,
-      "stop_dollar_amount": 3.45,
+      "stop_dollar_amount": 5.094,
+      "max_position_pct": 10.0,
       "portfolio_action": "include_with_stop",
-      "position_size_advice": "Allocate ~$500 of $2500 budget to C."
+      "position_size_advice": "Stop distance is $5.09/share (risk per share). With a 1% risk budget of $25, you can hold ~4 shares. Suggested allocation: ~10% of your $2500 = $250."
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "stage2_pass": true,
+      "failure_reason": null,
+      "recommended_stop_label": "1.5xATR (7.11%)",
+      "recommended_stop_pct": 7.1123,
+      "sharpe_at_recommended": 0.7294,
+      "mean_annual_return_pct": 9.25,
+      "p_loss_gt5_pct": 0.61,
+      "avg_stops_per_year": 13.8,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 17.71,
+      "max_position_pct": 11.43,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Stop distance is $17.71/share (risk per share). With a 1% risk budget of $25, you can hold ~1 share. Suggested allocation: ~11.43% of your $2500 = $285.71."
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "stage2_pass": true,
+      "failure_reason": null,
+      "recommended_stop_label": "3.0xATR (5.66%)",
+      "recommended_stop_pct": 5.6582,
+      "sharpe_at_recommended": 0.8221,
+      "mean_annual_return_pct": 11.78,
+      "p_loss_gt5_pct": 0.01,
+      "avg_stops_per_year": 7.4,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 15.285546,
+      "max_position_pct": 40.0,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Stop distance is $15.29/share (risk per share). With a 1% risk budget of $25, you can hold ~1 share. Suggested allocation: ~40% of your $2500 = $1000."
+    },
+    "QCOM": {
+      "ticker": "QCOM",
+      "stage2_pass": true,
+      "failure_reason": null,
+      "recommended_stop_label": "2.5xATR (8.00%)",
+      "recommended_stop_pct": 8.0,
+      "sharpe_at_recommended": 0.7128,
+      "mean_annual_return_pct": 11.94,
+      "p_loss_gt5_pct": 1.02,
+      "avg_stops_per_year": 13.8,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 13.928,
+      "max_position_pct": 0.0,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Stop distance is $13.93/share (risk per share). With a 1% risk budget of $25, you can hold ~1 share. Suggested allocation: ~10% of your $2500 = $250."
+    },
+    "BMY": {
+      "ticker": "BMY",
+      "stage2_pass": true,
+      "failure_reason": null,
+      "recommended_stop_label": "2.5xATR (6.01%)",
+      "recommended_stop_pct": 6.01,
+      "sharpe_at_recommended": 0.7352,
+      "mean_annual_return_pct": 7.68,
+      "p_loss_gt5_pct": 0.27,
+      "avg_stops_per_year": 13.7,
+      "is_high_volatility": false,
+      "stop_dollar_amount": 3.885169,
+      "max_position_pct": 15.0,
+      "portfolio_action": "include_with_stop",
+      "position_size_advice": "Stop distance is $3.89/share (risk per share). With a 1% risk budget of $25, you can hold ~6 shares. Suggested allocation: ~15% of your $2500 = $375."
     }
   },
   "actions_by_ticker": {
-    "AMGN": "buy",
+    "CVS": "hold",
     "JNJ": "hold",
-    "MU": "hold",
+    "QCOM": "hold",
+    "BMY": "hold",
+    "NVDA": "monitor",
     "META": "monitor",
-    "C": "monitor"
-  }
+    "CRM": "monitor"
+  },
+  "signal_dates": {
+    "NVDA": {
+      "forecast_date": "2026-09-15",
+      "sentiment_date": "2026-09-18",
+      "backtest_date": "2026-09-01"
+    },
+    "META": {
+      "forecast_date": "unknown",
+      "sentiment_date": "2026-09-18",
+      "backtest_date": "2026-09-08"
+    },
+    "CVS": {
+      "forecast_date": "unknown",
+      "sentiment_date": "2026-08-31",
+      "backtest_date": "2026-08-31"
+    },
+    "CRM": {
+      "forecast_date": "2026-09-15",
+      "sentiment_date": "2026-09-18",
+      "backtest_date": "2026-09-08"
+    },
+    "JNJ": {
+      "forecast_date": "unknown",
+      "sentiment_date": "2026-08-27",
+      "backtest_date": "2026-08-26"
+    },
+    "QCOM": {
+      "forecast_date": "unknown",
+      "sentiment_date": "2026-09-18",
+      "backtest_date": "2026-09-08"
+    },
+    "BMY": {
+      "forecast_date": "2026-09-15",
+      "sentiment_date": "2026-09-18",
+      "backtest_date": "2026-09-08"
+    }
+  },
+  "data_ages": {
+    "NVDA": {
+      "forecast_days": 3,
+      "sentiment_days": 0,
+      "backtest_days": 17
+    },
+    "META": {
+      "forecast_days": "no file found",
+      "sentiment_days": 0,
+      "backtest_days": 9
+    },
+    "CVS": {
+      "forecast_days": "no file found",
+      "sentiment_days": 17,
+      "backtest_days": 17
+    },
+    "CRM": {
+      "forecast_days": 3,
+      "sentiment_days": 0,
+      "backtest_days": 9
+    },
+    "JNJ": {
+      "forecast_days": "no file found",
+      "sentiment_days": 22,
+      "backtest_days": 22
+    },
+    "QCOM": {
+      "forecast_days": "no file found",
+      "sentiment_days": 0,
+      "backtest_days": 9
+    },
+    "BMY": {
+      "forecast_days": 3,
+      "sentiment_days": 0,
+      "backtest_days": 9
+    }
+  },
+  "cash_remaining": 2500.0,
+  "tickers_to_buy": [],
+  "tickers_to_sell": [],
+  "tickers_to_hold": [
+    "CVS",
+    "JNJ",
+    "QCOM",
+    "BMY"
+  ],
+  "tickers_to_monitor": [
+    "NVDA",
+    "META",
+    "CRM"
+  ],
+  "stop_loss_orders": {
+    "CVS": 5.094,
+    "JNJ": 15.29,
+    "QCOM": 13.93,
+    "BMY": 3.885
+  },
+  "combined_scores": {
+    "NVDA": 63.68,
+    "META": 64.59,
+    "CVS": 69.68,
+    "CRM": 61.49,
+    "JNJ": 67.62,
+    "QCOM": 71.21,
+    "BMY": 67.48
+  },
+  "buy_trigger_prices": {
+    "NVDA": 208.79,
+    "META": 614.97,
+    "CRM": 228.82
+  },
+  "user_prompt": "Today, you have 4 positions to hold in your portfolio, and your cash balance remains at $2500. None of the monitored tickers are being bought today. NVDA is blocked by a neutral forecast, which would change if its target price of $208.79 is reached. META is also neutral, and a buy would be triggered if it hits $614.97. CRM is blocked by a bearish forecast, needing a significant change to consider a buy. Keep an eye on these candidates for future opportunities.\n\n\u26a0\ufe0f EVENT CALENDAR ALERTS (next 10 days):\n  \u2022 META [CRITICAL]: ex dividend on 2026-09-21 (3d) \u2014 Avoid entering before ex-dividend date in 3 days",
+  "event_alerts": [
+    {
+      "ticker": "META",
+      "event_type": "ex_dividend",
+      "event_date": "2026-09-21",
+      "days_until_event": 3,
+      "position_context": "monitor",
+      "severity": "critical",
+      "recommendation": "Avoid entering before ex-dividend date in 3 days"
+    }
+  ],
+  "event_guard_window": 10
 }

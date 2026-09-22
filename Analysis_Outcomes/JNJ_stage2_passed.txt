@@ -1,31 +1,31 @@
 JNJ - STAGE 2 PASSED
-Date: 2026-08-04
+Date: 2026-08-26
 Decision: Proceed to Stage 3 (Sentiment Analysis)
 
 METHODOLOGY (ATR-BASED STOPS):
-- Data: 3 years of JNJ daily OHLCV history (759 trading days)
-- Price range: $134.36 - $267.24
-- Mean daily return: +0.076%
-- Parkinson volatility (High/Low): 1.021%
-- Current price: $252.07
-- ATR(14): $6.30 (2.50% of price)
+- Data: 3 years of JNJ daily OHLCV history (758 trading days)
+- Price range: $133.70 - $273.14
+- Mean daily return: +0.080%
+- Parkinson volatility (High/Low): 1.024%
+- Current price: $270.00
+- ATR(14): $5.09 (1.89% of price)
 - High-vol treatment: NO
 - Multipliers tested: [1.0, 1.5, 2.0, 2.5, 3.0]
 - Time backstop: Day 5, min gain +0.5%
 - Simulations: 10,000 per stop level
 
 Stop Level                 Sharpe     Mean Ret     P(Loss>5%)     Stops/Yr   P(Profit)
-1.0xATR (2.50%)            0.723          +3.92%         0.00%      21.5      76.8%
-1.5xATR (3.75%)            0.790          +6.29%         0.00%      13.5      82.5%
-2.0xATR (5.00%)            0.808          +9.36%         0.00%       9.1      86.1%
-2.5xATR (6.25%)            0.874         +13.14%         0.02%       6.4      88.6%
-3.0xATR (7.49%)            0.950         +16.48%         0.09%       4.7      90.1%  <-- RECOMMENDED
+1.0xATR (1.89%)            0.718          +3.05%         0.00%      28.3      73.8%
+1.5xATR (2.83%)            0.763          +4.59%         0.00%      18.5      78.9%
+2.0xATR (3.77%)            0.780          +6.57%         0.00%      13.2      82.6%
+2.5xATR (4.72%)            0.805          +9.17%         0.00%       9.7      86.5%
+3.0xATR (5.66%)            0.822         +11.78%         0.01%       7.4      88.1%  <-- RECOMMENDED
 
-RECOMMENDED STOP: 3.0xATR (7.49%)
-- Sharpe : 0.950
-- Mean Return: +16.48%
-- P(Loss>5%): 0.09%
-- Stops/yr  : 4.7
+RECOMMENDED STOP: 3.0xATR (5.66%)
+- Sharpe : 0.822
+- Mean Return: +11.78%
+- P(Loss>5%): 0.01%
+- Stops/yr  : 7.4
 
 STAGE 2 DECISION: PASS
 NEXT STEP: Stage 3 -- Sentiment Analysis

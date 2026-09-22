@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "ticker": "JPM",
+    "company_name": "JPMorgan Chase & Co.",
+    "method": "time_series_B_xgboost_relative_return",
+    "generated_at": "2026-06-30T21:51:11.227699",
+    "data_start": "2023-08-15T00:00:00",
+    "data_end": "2026-05-15T00:00:00",
+    "train_cutoff": "2025-08-14",
+    "forecast_horizon_days": 30
+  },
+  "data_summary": {
+    "total_rows": 691,
+    "train_rows": 501,
+    "val_rows": 190,
+    "current_price": 297.80999755859375,
+    "price_1yr_ago": 262.39,
+    "volatility_daily_pct": 1.4563
+  },
+  "model_performance": {
+    "train_metrics": {
+      "rmse": 6.1779,
+      "mae": 4.869,
+      "residual_std": 6.1779,
+      "direction_accuracy": 0.7924
+    },
+    "val_metrics": {
+      "rmse": 6.6618,
+      "mae": 5.6019,
+      "residual_std": 5.2084,
+      "direction_accuracy": 0.5474
+    },
+    "feature_importance": {
+      "ret_1d": 0.0,
+      "ret_2d": 0.00697315763682127,
+      "ret_3d": 0.037888918071985245,
+      "ret_5d": 0.05850663408637047,
+      "ret_10d": 0.08342118561267853,
+      "ret_20d": 0.03925592824816704,
+      "ret_30d": 0.05855593830347061,
+      "rsi_14": 0.10646495223045349,
+      "macd_line": 0.24741755425930023,
+      "macd_signal": 0.0,
+      "macd_hist": 0.06485114246606827,
+      "bb_pos": 0.03546152636408806,
+      "bb_width": 0.06058523431420326,
+      "vol_ratio": 0.11047540605068207,
+      "atr_pct": 0.09014235436916351
+    }
+  },
+  "prediction": {
+    "current_price": 297.80999755859375,
+    "forecast_return_pct": 4.6808,
+    "lower_bound_return_pct": -5.5277,
+    "upper_bound_return_pct": 14.8893,
+    "forecast_price_mid": 312.08,
+    "forecast_price_low": 281.79,
+    "forecast_price_high": 345.62,
+    "signal": "FAIL",
+    "min_threshold_pct": 5.0,
+    "feature_snapshot": {
+      "ret_1d": -0.702675,
+      "ret_2d": -0.815977,
+      "ret_3d": -2.346258,
+      "ret_5d": -1.430242,
+      "ret_10d": -4.805278,
+      "ret_20d": -4.105168,
+      "ret_30d": 1.594182,
+      "rsi_14": 0.417409,
+      "macd_line": -0.00305,
+      "macd_signal": 0.00336,
+      "macd_hist": -0.00641,
+      "bb_pos": 0.040573,
+      "bb_width": 0.07344,
+      "vol_ratio": 1.109354,
+      "atr_pct": 0.020374
+    }
+  }
+}

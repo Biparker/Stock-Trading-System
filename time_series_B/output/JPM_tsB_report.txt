@@ -1,0 +1,39 @@
+======================================================================
+TIME SERIES B -- XGBoost 30-Day Relative Return Forecast
+======================================================================
+Ticker          : JPM
+Company         : JPMorgan Chase & Co.
+Generated       : 2026-06-30 21:51
+
+[TRAINING SETUP]
+  Total data    : 691 trading days (3 years)
+  Train period  : years 1-2  (501 rows)
+  Val period    : year 3     (190 rows, out-of-sample)
+  Train cutoff  : 2025-08-14
+
+[MODEL PERFORMANCE]
+  Train RMSE    : 6.1779
+  Train Dir Acc : 79.2%
+  Val   RMSE    : 6.6618  (out-of-sample)
+  Val   Dir Acc : 54.7%  (out-of-sample)
+
+[TOP FEATURES BY IMPORTANCE]
+  macd_line            24.7%
+  vol_ratio            11.0%
+  rsi_14               10.6%
+  atr_pct              9.0%
+  ret_10d              8.3%
+  macd_hist            6.5%
+  bb_width             6.1%
+  ret_30d              5.9%
+
+[PREDICTION]
+  Current price          : $297.81
+  30-day forecast return : +4.68%
+  Confidence band        : [-5.53% , +14.89%]
+  Forecast price (mid)   : $312.08
+  Forecast price range   : $281.79 - $345.62
+  Minimum threshold      : +5.0%
+
+  STAGE 1 SIGNAL : [FAIL] FAIL
+======================================================================
